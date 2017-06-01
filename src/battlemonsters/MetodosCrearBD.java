@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -116,9 +118,13 @@ public class MetodosCrearBD {
         }
     }
 
-    public static void desconectar() throws SQLException {
-        stmt.close();
-        conn.close();
+    public static void desconectar(){
+        try {
+            stmt.close();
+            conn.close();
+        } catch (SQLException ex) {
+            System.err.println("Error al desconectar");
+        }
     }
 
     public static void insertarMonstruos(){
