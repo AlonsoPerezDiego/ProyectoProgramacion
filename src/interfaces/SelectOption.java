@@ -53,6 +53,11 @@ public class SelectOption extends javax.swing.JFrame {
         partida1.setText("Combate ");
         partida1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
         partida1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        partida1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                partida1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(partida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 580, 70));
 
         partida2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -76,6 +81,11 @@ public class SelectOption extends javax.swing.JFrame {
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
+
+    private void partida1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida1ActionPerformed
+        new Combat().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_partida1ActionPerformed
 
     /**
      * @param args the command line arguments
