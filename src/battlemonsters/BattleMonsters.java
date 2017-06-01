@@ -6,6 +6,7 @@
 package battlemonsters;
 
 import interfaces.MainMenu;
+import java.sql.SQLException;
 
 /**
  *
@@ -16,7 +17,15 @@ public class BattleMonsters {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args){
+        MetodosCrearBD.Conectar();
+        MetodosCrearBD.crearBMonsterpedia();
+        MetodosCrearBD.crearBMonstruos();
+        MetodosCrearBD.crearBMovimientos();
+        MetodosCrearBD.crearJugador();
+        MetodosCrearBD.insertarMonstruos();
+        MetodosCrearBD.mostrarTablas();
+        MetodosCrearBD.desconectar();
         new MainMenu().setVisible(true);
     }
     
