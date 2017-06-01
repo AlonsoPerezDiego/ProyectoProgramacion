@@ -67,7 +67,7 @@ public class SelectOption extends javax.swing.JFrame {
         partida3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(partida3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 580, 70));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Backgroung.jpg"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MenuBackgroung.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();

@@ -69,7 +69,7 @@ public class MainMenu extends javax.swing.JFrame {
         partida3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(partida3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 480, 80));
 
-        nombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Backgroung.jpg"))); // NOI18N
+        nombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MenuBackgroung.jpg"))); // NOI18N
         getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();

@@ -126,7 +126,7 @@
     <Component class="javax.swing.JLabel" name="fondo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/Backgroung.jpg"/>
+          <Image iconType="3" name="/images/MenuBackgroung.jpg"/>
         </Property>
       </Properties>
       <Constraints>
