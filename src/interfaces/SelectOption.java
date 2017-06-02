@@ -32,6 +32,7 @@ public class SelectOption extends javax.swing.JFrame {
         partida1 = new javax.swing.JButton();
         partida2 = new javax.swing.JButton();
         partida3 = new javax.swing.JButton();
+        atras = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,6 +73,16 @@ public class SelectOption extends javax.swing.JFrame {
         partida3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(partida3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 580, 70));
 
+        atras.setBackground(new java.awt.Color(0, 0, 0));
+        atras.setForeground(new java.awt.Color(255, 255, 255));
+        atras.setText("<|=");
+        atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MenuBackgroung.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
@@ -86,6 +97,11 @@ public class SelectOption extends javax.swing.JFrame {
         new Combat().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_partida1ActionPerformed
+
+    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
+        new MainMenu().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_atrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,6 +140,7 @@ public class SelectOption extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton atras;
     private javax.swing.JLabel fondo;
     private javax.swing.JButton partida1;
     private javax.swing.JButton partida2;
