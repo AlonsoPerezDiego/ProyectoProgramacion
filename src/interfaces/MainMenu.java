@@ -80,8 +80,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_salirActionPerformed
 
     private void partida1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida1ActionPerformed
-        new SelectOption().setVisible(true);
-        this.setVisible(false);
+        new NewGame().setVisible(true);
     }//GEN-LAST:event_partida1ActionPerformed
 
     /**
