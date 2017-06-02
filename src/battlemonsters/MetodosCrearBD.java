@@ -30,6 +30,16 @@ public class MetodosCrearBD {
             System.err.println("Fallo al conectar la base de datos");
         }
     }
+    public static void crear(){
+        MetodosCrearBD.Conectar();
+        MetodosCrearBD.crearBMonsterpedia();
+        MetodosCrearBD.crearBMonstruos();
+        MetodosCrearBD.crearBMovimientos();
+        MetodosCrearBD.crearJugador();
+        MetodosCrearBD.insertarMonstruos();
+        MetodosCrearBD.mostrarTablas();
+        MetodosCrearBD.desconectar();
+    }
     public static void crearBMonstruos(){
         try {
             stmt = conn.createStatement();
