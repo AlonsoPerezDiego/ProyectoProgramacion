@@ -28,22 +28,61 @@ public class Combat extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
+        ataque1 = new javax.swing.JButton();
+        ataque2 = new javax.swing.JButton();
+        ataque3 = new javax.swing.JButton();
+        ataque4 = new javax.swing.JButton();
+        atras = new javax.swing.JButton();
+        rMonstruo = new javax.swing.JLabel();
+        miMonstruo = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("x");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        salir.setBackground(new java.awt.Color(255, 0, 0));
+        salir.setForeground(new java.awt.Color(255, 255, 255));
+        salir.setText("x");
+        salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                salirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
+        getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
+
+        ataque1.setText("jButton2");
+        getContentPane().add(ataque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 240, 70));
+
+        ataque2.setText("jButton3");
+        getContentPane().add(ataque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 620, 240, 70));
+
+        ataque3.setText("jButton4");
+        getContentPane().add(ataque3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 620, 240, 70));
+
+        ataque4.setText("jButton1");
+        getContentPane().add(ataque4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 530, 240, 70));
+
+        atras.setBackground(new java.awt.Color(0, 0, 0));
+        atras.setForeground(new java.awt.Color(255, 255, 255));
+        atras.setText("<|=");
+        atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        rMonstruo.setMaximumSize(new java.awt.Dimension(350, 250));
+        rMonstruo.setMinimumSize(new java.awt.Dimension(350, 250));
+        rMonstruo.setPreferredSize(new java.awt.Dimension(350, 250));
+        getContentPane().add(rMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 90, -1, -1));
+
+        miMonstruo.setMaximumSize(new java.awt.Dimension(350, 250));
+        miMonstruo.setMinimumSize(new java.awt.Dimension(350, 250));
+        miMonstruo.setPreferredSize(new java.awt.Dimension(350, 250));
+        getContentPane().add(miMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, -1, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Backgroung.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -51,9 +90,14 @@ public class Combat extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_salirActionPerformed
+
+    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
+        new SelectOption().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_atrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -91,7 +135,14 @@ public class Combat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ataque1;
+    private javax.swing.JButton ataque2;
+    private javax.swing.JButton ataque3;
+    private javax.swing.JButton ataque4;
+    private javax.swing.JButton atras;
     private javax.swing.JLabel fondo;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel miMonstruo;
+    private javax.swing.JLabel rMonstruo;
+    private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }
