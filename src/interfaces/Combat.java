@@ -66,7 +66,7 @@ public class Combat extends javax.swing.JFrame {
 
         atras.setBackground(new java.awt.Color(0, 0, 0));
         atras.setForeground(new java.awt.Color(255, 255, 255));
-        atras.setText("<|=");
+        atras.setText("Rendirse");
         atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 atrasActionPerformed(evt);
