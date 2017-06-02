@@ -21,7 +21,7 @@ public class MetodosCrearBD {
     static Connection conn = null;
     static Statement stmt = null;   
     
-    public static void Conectar(){
+    public static void conectar(){
         try {
             Class.forName("org.sqlite.JDBC");
             conn = DriverManager.getConnection("jdbc:sqlite:battlemonsters.db");
@@ -31,14 +31,14 @@ public class MetodosCrearBD {
         }
     }
     public static void crear(){
-        MetodosCrearBD.Conectar();
-        MetodosCrearBD.crearBMonsterpedia();
-        MetodosCrearBD.crearBMonstruos();
-        MetodosCrearBD.crearBMovimientos();
-        MetodosCrearBD.crearJugador();
-        MetodosCrearBD.insertarMonstruos();
-        MetodosCrearBD.mostrarTablas();
-        MetodosCrearBD.desconectar();
+        conectar();
+        crearBMonsterpedia();
+        crearBMonstruos();
+        crearBMovimientos();
+        crearJugador();
+        insertarMonstruos();
+        mostrarTablas();
+        desconectar();
     }
     public static void crearBMonstruos(){
         try {
