@@ -5,6 +5,9 @@
  */
 package interfaces;
 
+import battlemonsters.Battle;
+import static lib.Op.intRandom20;
+
 /**
  *
  * @author Diego
@@ -14,6 +17,8 @@ public class Combat extends javax.swing.JFrame {
     /**
      * Creates new form Combat
      */
+    Battle fight = new Battle(intRandom20(),intRandom20());
+    
     public Combat() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -134,6 +139,7 @@ public class Combat extends javax.swing.JFrame {
         });
     }
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ataque1;
     private javax.swing.JButton ataque2;
