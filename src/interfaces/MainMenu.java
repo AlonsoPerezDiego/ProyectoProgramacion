@@ -14,6 +14,7 @@ public class MainMenu extends javax.swing.JFrame {
     /**
      * Creates new form MainMenu
      */
+    private static int partida;
     public MainMenu() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -62,11 +63,21 @@ public class MainMenu extends javax.swing.JFrame {
         partida2.setText("jButton2");
         partida2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
         partida2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        partida2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                partida2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(partida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 480, 80));
 
         partida3.setText("jButton3");
         partida3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
         partida3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        partida3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                partida3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(partida3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 480, 80));
 
         nombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MenuBackgroung.jpg"))); // NOI18N
@@ -81,8 +92,22 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void partida1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida1ActionPerformed
         new NewGame().setVisible(true);
+        partida = 1;
     }//GEN-LAST:event_partida1ActionPerformed
 
+    private void partida2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida2ActionPerformed
+        new NewGame().setVisible(true);
+        partida = 2;
+    }//GEN-LAST:event_partida2ActionPerformed
+
+    private void partida3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida3ActionPerformed
+        new NewGame().setVisible(true);
+        partida = 3;
+    }//GEN-LAST:event_partida3ActionPerformed
+
+    public static int getPartida(){
+        return partida;
+    }
     /**
      * @param args the command line arguments
      */
