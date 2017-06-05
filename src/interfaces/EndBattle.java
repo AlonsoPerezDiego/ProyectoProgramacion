@@ -38,6 +38,11 @@ public class EndBattle extends javax.swing.JFrame {
         salir.setBackground(new java.awt.Color(255, 0, 0));
         salir.setForeground(new java.awt.Color(255, 255, 255));
         salir.setText("x");
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
         getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
         getContentPane().add(end, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 640, 210));
 
@@ -46,6 +51,10 @@ public class EndBattle extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_salirActionPerformed
 
     /**
      * @param args the command line arguments
