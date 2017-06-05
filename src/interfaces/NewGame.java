@@ -37,10 +37,8 @@ public class NewGame extends javax.swing.JFrame {
         textoNG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(500, 400));
         setMinimumSize(new java.awt.Dimension(500, 400));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(500, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         continuar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -54,6 +52,11 @@ public class NewGame extends javax.swing.JFrame {
 
         nuevaPartida.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nuevaPartida.setText("Nueva partida");
+        nuevaPartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuevaPartidaActionPerformed(evt);
+            }
+        });
         getContentPane().add(nuevaPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 230, 70));
         getContentPane().add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 390));
 
@@ -78,6 +81,12 @@ public class NewGame extends javax.swing.JFrame {
         new MainMenu().setVisible(false);
         this.setVisible(false);
     }//GEN-LAST:event_continuarActionPerformed
+
+    private void nuevaPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevaPartidaActionPerformed
+        new NewPlayer().setVisible(true);
+        this.setVisible(false);
+        new MainMenu().setVisible(false);
+    }//GEN-LAST:event_nuevaPartidaActionPerformed
 
     /**
      * @param args the command line arguments
