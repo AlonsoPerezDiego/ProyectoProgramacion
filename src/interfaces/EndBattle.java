@@ -27,10 +27,19 @@ public class EndBattle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        salir = new javax.swing.JButton();
+        end = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        salir.setBackground(new java.awt.Color(255, 0, 0));
+        salir.setForeground(new java.awt.Color(255, 255, 255));
+        salir.setText("x");
+        getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
+        getContentPane().add(end, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 640, 210));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EndBackground.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
@@ -74,6 +83,8 @@ public class EndBattle extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel end;
     private javax.swing.JLabel fondo;
+    private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }
