@@ -11,13 +11,17 @@ package interfaces;
  */
 public class NewPlayer extends javax.swing.JFrame {
 
+    private static String nombre, sexo;
+    
     /**
-     * Creates new form NewPlayer
+     * Creates new form Characters
      */
     public NewPlayer() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,22 +31,113 @@ public class NewPlayer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        exit = new javax.swing.JButton();
+        back = new javax.swing.JButton();
+        boy = new javax.swing.JButton();
+        girl = new javax.swing.JButton();
+        choose = new javax.swing.JLabel();
+        name = new javax.swing.JTextField();
+        nameL = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        exit.setBackground(new java.awt.Color(255, 0, 0));
+        exit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        exit.setText("EXIT");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 10, -1, -1));
+
+        back.setBackground(new java.awt.Color(0, 0, 0));
+        back.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 255, 255));
+        back.setText("BACK");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        boy.setBackground(new java.awt.Color(255, 255, 255));
+        boy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Boy.jpg"))); // NOI18N
+        boy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boy, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 380, 580));
+
+        girl.setBackground(new java.awt.Color(255, 255, 255));
+        girl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Girl.jpg"))); // NOI18N
+        girl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                girlActionPerformed(evt);
+            }
+        });
+        getContentPane().add(girl, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 110, 380, 580));
+
+        choose.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        choose.setForeground(new java.awt.Color(204, 0, 0));
+        choose.setText("CHOOSE A CHARACTER");
+        getContentPane().add(choose, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
+
+        name.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 130, 30));
+
+        nameL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        nameL.setText("     Enter your name:");
+        nameL.setOpaque(true);
+        getContentPane().add(nameL, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 130, 30));
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MenuBackgroung.jpg"))); // NOI18N
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        new NewGame().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_backActionPerformed
+
+    private void boyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boyActionPerformed
+        new SelectOption().setVisible(true);
+        this.setVisible(false);
+        nombre = name.getText();
+        sexo = "h";
+    }//GEN-LAST:event_boyActionPerformed
+
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+
+    }//GEN-LAST:event_nameActionPerformed
+
+    private void girlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_girlActionPerformed
+        new SelectOption().setVisible(true);
+        this.setVisible(false);
+        nombre = name.getText();
+        sexo = "m";
+    }//GEN-LAST:event_girlActionPerformed
+
+    public static String getNombre(){
+        return nombre;
+    }
     /**
      * @param args the command line arguments
      */
@@ -69,6 +164,9 @@ public class NewPlayer extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(NewPlayer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -79,5 +177,13 @@ public class NewPlayer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
+    private javax.swing.JLabel background;
+    private javax.swing.JButton boy;
+    private javax.swing.JLabel choose;
+    private javax.swing.JButton exit;
+    private javax.swing.JButton girl;
+    private javax.swing.JTextField name;
+    private javax.swing.JLabel nameL;
     // End of variables declaration//GEN-END:variables
 }
