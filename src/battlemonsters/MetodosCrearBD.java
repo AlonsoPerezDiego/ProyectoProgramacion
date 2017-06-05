@@ -36,6 +36,7 @@ public class MetodosCrearBD {
         crearBMonstruos();
         crearBMovimientos();
         crearJugador();
+        insertarBMonsterpedia();
         insertarBMonstruos();
         insertarBMovimientos();
         desconectar();
@@ -103,7 +104,7 @@ public class MetodosCrearBD {
                 stmt.executeUpdate("drop table bmonsterpedia");
                 crearBMonsterpedia();
             } catch (SQLException ex1) {
-                System.err.println("Erro al borrar la tabla bmonsterpedia");
+                System.err.println("Error al borrar la tabla bmonsterpedia");
             }
         }
     }
@@ -155,7 +156,7 @@ public class MetodosCrearBD {
             stmt.executeUpdate("insert into bmonstruos(nummon,nmon,tipo,fotomon,fotomonr,hpmon,atkmon,defmon,fort1,fort2,deb1,deb2) values(20,'Tanuki','earth','MonsterJ1/TanukiJ1.png','RivalMonster/Tanuki.png',155,30,35,'fire','water','steel','grass')");
             conn.commit();
         } catch (SQLException ex) {
-            System.err.println("No se pudieron insertar");
+            System.err.println("No se pudieron insertar en bmonstruos");
         }
     }
     public static void mostrarTablas(){
@@ -177,7 +178,7 @@ public class MetodosCrearBD {
                 String deb2T=rs.getString("deb2");
                 
                 
-                System.out.println("--------------------------------------------------------------------");
+                System.err.println("--------------------------------------------------------------------");
                 System.out.println("Numero: " + nummonT);
                 System.out.println("Nombre: " + nmonT);
                 System.out.println("Tipo: " + tipoT);
@@ -236,8 +237,35 @@ public class MetodosCrearBD {
             stmt.executeUpdate("insert into bmovimientos(nummov,nmov,tipo,daño,usos)values(39,'Fisura','tierra',50,1)");
             conn.commit();
         } catch (SQLException ex) {
-            Logger.getLogger(MetodosCrearBD.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("Error al insertar en bmovimientos");
         }
         
+    }
+    public static void insertarBMonsterpedia(){
+        try {
+            stmt=conn.createStatement();
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Amepach','Habita los alrededores de las fabricas',' de las que roban pequeños trozos de metal',' para alimentar a sus crias.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Ankylore','Esta formado por rocas de mas de 10',' mil años de antiguedad.',' Siempre se mueven en manada.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Haisand','Los Haisand evolucionaron de los tiburones',' comunes adaptandose a nadar en los desirtos',' donde cazan buceando en la arena.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Hakonmyo','Vive en las montañas y a pesar de ser amistoso,',' no se acerca a los humanos. Antiguamente era considerado',' un ser mistico que controla el bien y el mal.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Hiprunio','Estos pequeños habitan las zonas mas rocosas',' de las montañas.Cuando se acercan a las zonas',' de bosques provocan grandes incendios.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Hitsune','Cuando aun son crias realizan combates contra',' los mayores del grupo para fortalecerse.',' En ocasiones nacen con tres colas.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Kazanne','Debido a su necesidad de mantener su calor',' viven en cuevas en las que usan su fuego',' para calentar las piedras y aumentar la temperatura.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Lifeuer','Los Lifeuer son criados hasta su adolescencia',' donde se idependizan y se van para formar',' su propia manada sin su padres.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Nerite','Habita las profundidades de los oceanos, al',' rededor de los 1300 metros. Rara vez sube a la superficie',', ver uno es señal de buena suerte.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Phanseed','Ayudan a los campesinos regando los campos,',' cuando un Phanseed se encariña con alguien utiliza',' la semilla de su cabeza para que crezcan mejor los cultivos.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Pinp','Viven en las zonas mas frias del planeta,bailan',' a menudo para poder calentarse.Sus ojos estan cubiertos',' de una membrana que les permite ver bajo el agua.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Poolfie','Habitan las zonas mas altas de los rios para',' asi limpiar el agua de toda contaminacion dejandolas cristalinas,','algunos viven tambien en grandes lagos.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Sandbone','Son totalmente fieles a su entrenador aunque',' una vez al año se escapan para reunirse con su',' antigua manada volviendo dias despues.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Sandeon','El pelaje de los Sandeon es mas abundante',' y brillante dependiendo de la calidad',' de la tierra en la que vive.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Searaw','Son los causantes de hundimientos de barcos',' debido a que tienen la necesidad de utilizar su',' sierra para mantenerla fuerte y afilada.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Sheruha','Utilizan la gran hoja que tiene a su espalda',' para protegerse del sol y hacer la fotosintesis,',' cuando enferma su hojas se vuelve marron.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Spirunne','La dura telaraña de los Spirunne es utilizada',' para crear cadenas,esta tela trenzada',' pude servir para sujetar barcos.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Stail','Recoje trozos de barcos hundidos para poder',' formar su duro caparazon,cohabitan con',' los Searaw para su propio beneficio.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Steeleon','Su piel esta compuesta de acero, esta es',' tan brillante que lo hizo muy popular en los concursos.',' Cuanto menos rugosa sea, mas sano estara.')");
+            stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Tanuki','Son muy queridos en oriente como mascota',' ya que son signo de salud para los niños',' y de prosperidaz en los negocios.')");
+                    } catch (SQLException ex) {
+            System.err.println("Error al insertar en bmonsterpedia");
+        }
     }
 }
