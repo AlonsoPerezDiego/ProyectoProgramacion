@@ -20,6 +20,9 @@ public class Monsterpedia extends javax.swing.JFrame {
     public Monsterpedia() {
         initComponents();
         Metodos.cargarMonsterpedia();
+        Metodos.seleccionarLinea();
+        Metodos.mostrarMonstruoSeleccionado();
+        
     }
 
     /**
@@ -80,6 +83,11 @@ public class Monsterpedia extends javax.swing.JFrame {
             }
         ));
         tablaMonstruos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        tablaMonstruos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMonstruosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablaMonstruos);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
@@ -97,6 +105,11 @@ public class Monsterpedia extends javax.swing.JFrame {
         MetodosCrearBD.desconectar();
         System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
+
+    private void tablaMonstruosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMonstruosMouseClicked
+        Metodos.seleccionarLinea();
+        Metodos.mostrarMonstruoSeleccionado();
+    }//GEN-LAST:event_tablaMonstruosMouseClicked
 
     /**
      * @param args the command line arguments
