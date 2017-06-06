@@ -6,6 +6,7 @@
 package interfaces;
 
 import battlemonsters.Battle;
+import battlemonsters.MetodosCrearBD;
 import static lib.Op.intRandom20;
 
 /**
@@ -96,6 +97,7 @@ public class Combat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        MetodosCrearBD.desconectar();
         System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
 
