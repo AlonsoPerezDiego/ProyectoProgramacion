@@ -58,9 +58,6 @@ public class Metodos {
            Monsterpedia.imagenLabel.setIcon(new ImageIcon(fotoR));
            Monsterpedia.nombreLabel.setText(rs.getString("nmon"));
            ResultSet rs2=stmt.executeQuery("select * from bmonsterpedia where nmon='"+elecMon+"';");
-//           String datos1R=rs2.getString("datos1");
-//           String datos2R=rs2.getString("datos2");
-//           String datos3R=rs2.getString("datos3");
            Monsterpedia.datos1Label.setText(rs2.getString("datos1"));
            Monsterpedia.datos2Label.setText(rs2.getString("datos2"));
            Monsterpedia.datos3Label.setText(rs2.getString("datos3"));
