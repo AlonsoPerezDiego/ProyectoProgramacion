@@ -18,10 +18,11 @@ import java.util.logging.Logger;
  * @author Adry
  */
 public class MetodosCrearBD {
+
     static Connection conn = null;
-    static Statement stmt = null;   
-    
-    public static void conectar(){
+    static Statement stmt = null;
+
+    public static void conectar() {
         try {
             Class.forName("org.sqlite.JDBC");
             conn = DriverManager.getConnection("jdbc:sqlite:battlemonsters.db");
@@ -30,7 +31,8 @@ public class MetodosCrearBD {
             System.err.println("Fallo al conectar la base de datos");
         }
     }
-    public static void crear(){
+
+    public static void crear() {
         conectar();
         crearBMonsterpedia();
         crearBMonstruos();
@@ -40,7 +42,8 @@ public class MetodosCrearBD {
         insertarBMonstruos();
         insertarBMovimientos();
     }
-    public static void crearBMonstruos(){
+
+    public static void crearBMonstruos() {
         try {
             stmt = conn.createStatement();
             String sql = "Create table bmonstruos "
@@ -68,7 +71,7 @@ public class MetodosCrearBD {
         }
     }
 
-    public static void crearBMovimientos(){
+    public static void crearBMovimientos() {
         try {
             stmt = conn.createStatement();
             String sql = "Create table bmovimientos "
@@ -88,7 +91,7 @@ public class MetodosCrearBD {
         }
     }
 
-    public static void crearBMonsterpedia(){
+    public static void crearBMonsterpedia() {
         try {
             stmt = conn.createStatement();
             String sql = "Create table bmonsterpedia "
@@ -108,7 +111,7 @@ public class MetodosCrearBD {
         }
     }
 
-    public static void crearJugador(){
+    public static void crearJugador() {
         try {
             stmt = conn.createStatement();
             String sql = "Create table jugador"
@@ -119,9 +122,10 @@ public class MetodosCrearBD {
                     + "plose integer)";
             stmt.executeUpdate(sql);
         } catch (SQLException ex) {
+        }
     }
-    }
-    public static void desconectar(){
+
+    public static void desconectar() {
         try {
             stmt.close();
             conn.close();
@@ -158,7 +162,8 @@ public class MetodosCrearBD {
             System.err.println("No se pudieron insertar en bmonstruos");
         }
     }
-    public static void mostrarTablas(){
+
+    public static void mostrarTablas() {
         try {
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM bmonstruos;");
@@ -167,38 +172,38 @@ public class MetodosCrearBD {
                 String nmonT = rs.getString("nmon");
                 String tipoT = rs.getString("tipo");
                 String fotomonT = rs.getString("fotomon");
-                String fotomonrT= rs.getString("fotomonr");
-                int hpmonT=rs.getInt("hpmon");
-                int atkmonT=rs.getInt("atkmon");
-                int defmonT=rs.getInt("defmon");
-                String fort1T=rs.getString("fort1");
-                String fort2T=rs.getString("fort2");
-                String deb1T=rs.getString("deb1");
-                String deb2T=rs.getString("deb2");
-                
-                
+                String fotomonrT = rs.getString("fotomonr");
+                int hpmonT = rs.getInt("hpmon");
+                int atkmonT = rs.getInt("atkmon");
+                int defmonT = rs.getInt("defmon");
+                String fort1T = rs.getString("fort1");
+                String fort2T = rs.getString("fort2");
+                String deb1T = rs.getString("deb1");
+                String deb2T = rs.getString("deb2");
+
                 System.err.println("--------------------------------------------------------------------");
                 System.out.println("Numero: " + nummonT);
                 System.out.println("Nombre: " + nmonT);
                 System.out.println("Tipo: " + tipoT);
                 System.out.println("Nombre de la foto: " + fotomonT);
                 System.out.println("Nombrede la foto rival: " + fotomonrT);
-                System.out.println("Hp: "+hpmonT);
-                System.out.println("Ataque: "+atkmonT);
-                System.out.println("Defensa: "+defmonT);
-                System.out.println("Fortaleza 1: "+fort1T);
-                System.out.println("Fortaleza 2: "+fort2T);
-                System.out.println("Debilidad 1: "+deb1T);
-                System.out.println("Debilidad 2: "+deb2T);
+                System.out.println("Hp: " + hpmonT);
+                System.out.println("Ataque: " + atkmonT);
+                System.out.println("Defensa: " + defmonT);
+                System.out.println("Fortaleza 1: " + fort1T);
+                System.out.println("Fortaleza 2: " + fort2T);
+                System.out.println("Debilidad 1: " + deb1T);
+                System.out.println("Debilidad 2: " + deb2T);
             }
             rs.close();
         } catch (SQLException ex) {
             System.err.println("Error al mostrar la tabla bmonstruos");
         }
     }
-    public static void insertarBMovimientos(){
+
+    public static void insertarBMovimientos() {
         try {
-            stmt=conn.createStatement();
+            stmt = conn.createStatement();
             stmt.executeUpdate("insert into bmovimientos(nummov,nmov,tipo,daño,usos)values(1,'Absorber','planta',20,10)");
             stmt.executeUpdate("insert into bmovimientos(nummov,nmov,tipo,daño,usos)values(2,'Latigo cepa','planta',25,8)");
             stmt.executeUpdate("insert into bmovimientos(nummov,nmov,tipo,daño,usos)values(3,'Ciclon hojas','planta',30,7)");
@@ -238,11 +243,12 @@ public class MetodosCrearBD {
         } catch (SQLException ex) {
             System.err.println("Error al insertar en bmovimientos");
         }
-        
+
     }
-    public static void insertarBMonsterpedia(){
+
+    public static void insertarBMonsterpedia() {
         try {
-            stmt=conn.createStatement();
+            stmt = conn.createStatement();
             stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Amepach','Habita los alrededores de las fabricas',' de las que roban pequeños trozos de metal',' para alimentar a sus crias.')");
             stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Ankylore','Esta formado por rocas de mas de 10',' mil años de antiguedad.',' Siempre se mueven en manada.')");
             stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Haisand','Los Haisand evolucionaron de los tiburones',' comunes adaptandose a nadar en los desirtos',' donde cazan buceando en la arena.')");
@@ -263,11 +269,12 @@ public class MetodosCrearBD {
             stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Stail','Recoje trozos de barcos hundidos para poder',' formar su duro caparazon,cohabitan con',' los Searaw para su propio beneficio.')");
             stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Steeleon','Su piel esta compuesta de acero, esta es',' tan brillante que lo hizo muy popular en los concursos.',' Cuanto menos rugosa sea, mas sano estara.')");
             stmt.executeUpdate("insert into bmonsterpedia(nmon,datos1,datos2,datos3)values('Tanuki','Son muy queridos en oriente como mascota',' ya que son signo de salud para los niños',' y de prosperidaz en los negocios.')");
-                    } catch (SQLException ex) {
+        } catch (SQLException ex) {
             System.err.println("Error al insertar en bmonsterpedia");
         }
     }
-   public static void mostrarBMonsterpedia(){
+
+    public static void mostrarBMonsterpedia() {
         try {
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM bmonsterpedia;");
@@ -275,14 +282,38 @@ public class MetodosCrearBD {
                 String nmonT = rs.getString("nmon");
                 String datos1T = rs.getString("datos1");
                 String datos2T = rs.getString("datos2");
-                String datos3T= rs.getString("datos3");
-                
-                System.out.println("Nombre: "+nmonT);
-                System.out.println("datos1: "+datos1T);
-                System.out.println("datos2: "+datos2T);
-                System.out.println("datos3: "+datos2T);
-            }    } catch (SQLException ex) {
-            System.err.println("Error al mostrar"+ ex);
+                String datos3T = rs.getString("datos3");
+
+                System.out.println("Nombre: " + nmonT);
+                System.out.println("datos1: " + datos1T);
+                System.out.println("datos2: " + datos2T);
+                System.out.println("datos3: " + datos2T);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al mostrar" + ex);
         }
-}
+    }
+    
+    public static String selectMonster(int mon, int pos){
+        String[] aux = null;
+        try {
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM bmonstruos WHERE nummon = " + mon  + ";");
+            aux[0] = rs.getString("nmon");
+            aux[1] = rs.getString("tipo");
+            aux[2] = rs.getString("fotomon");
+            aux[3] = rs.getString("fotomonr");
+            aux[4] = String.valueOf(rs.getInt("hpmon"));
+            aux[5] = String.valueOf(rs.getInt("atkmon"));
+            aux[6] = String.valueOf(rs.getInt("defmon"));
+            aux[7] = rs.getString("fort1");
+            aux[8] = rs.getString("fort2");
+            aux[9] = rs.getString("deb1");
+            aux[10] = rs.getString("deb2");
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(MetodosCrearBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return aux[pos];
+    }
 }
