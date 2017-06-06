@@ -9,6 +9,8 @@ import static battlemonsters.MetodosCrearBD.*;
 import interfaces.Monsterpedia;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -16,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Adry
  */
 public class Metodos {
+    static String elecMon;
     public static void cargarMonsterpedia(){
         DefaultTableModel modelo=(DefaultTableModel) Monsterpedia.tablaMonstruos.getModel();
         try {
@@ -35,5 +38,21 @@ public class Metodos {
             System.err.println("Error al cargar la tabla"+ex);
         }
             }
+    public static void seleccionarLinea(){ 
+        if(Monsterpedia.tablaMonstruos.getSelectedRow()==-1){
+            elecMon=(String) Monsterpedia.tablaMonstruos.getValueAt(0, 1);
+        }else{
+            elecMon= (String) Monsterpedia.tablaMonstruos.getValueAt(Monsterpedia.tablaMonstruos.getSelectedRow(),1);
+        }
+        
 }
-
+    public static void mostrarMonstruoSeleccionado(){
+        try {
+            stmt=conn.createStatement();
+//            int rs=stmt.executeUpdate("select fotomonr from bmonstruos where nmon='"+elecMon+"';");
+//            Monsterpedia.imagenLabel.setIcon(rs);
+        } catch (SQLException ex) {
+            Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
