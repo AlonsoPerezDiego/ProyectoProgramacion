@@ -7,10 +7,14 @@ package battlemonsters;
 
 import static battlemonsters.MetodosCrearBD.*;
 import interfaces.Monsterpedia;
+import java.awt.Image;
+import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -38,19 +42,22 @@ public class Metodos {
             System.err.println("Error al cargar la tabla"+ex);
         }
             }
-    public static void seleccionarLinea(){ 
+    public static String seleccionarLinea(){ 
         if(Monsterpedia.tablaMonstruos.getSelectedRow()==-1){
-            elecMon=(String) Monsterpedia.tablaMonstruos.getValueAt(0, 1);
+            return elecMon=(String) Monsterpedia.tablaMonstruos.getValueAt(0, 1); 
         }else{
-            elecMon= (String) Monsterpedia.tablaMonstruos.getValueAt(Monsterpedia.tablaMonstruos.getSelectedRow(),1);
+            return elecMon= (String) Monsterpedia.tablaMonstruos.getValueAt(Monsterpedia.tablaMonstruos.getSelectedRow(),1);
         }
         
 }
     public static void mostrarMonstruoSeleccionado(){
         try {
-            stmt=conn.createStatement();
-//            int rs=stmt.executeUpdate("select fotomonr from bmonstruos where nmon='"+elecMon+"';");
-//            Monsterpedia.imagenLabel.setIcon(rs);
+           stmt=conn.createStatement();
+           ResultSet rs=stmt.executeQuery("select fotomonr from bmonstruos where nmon='"+elecMon+"';");
+           String fotoR=rs.getString("fotomonr");
+//           IconImage imagenR=new IconImage(fotoR);
+           Monsterpedia.imagenLabel.setIcon(new ImageIcon(fotoR));
+            rs.close();
         } catch (SQLException ex) {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
         }
