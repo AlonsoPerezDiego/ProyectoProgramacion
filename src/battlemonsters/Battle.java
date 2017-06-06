@@ -48,11 +48,15 @@ public class Battle {
     public void eficiencia(String tipoA, String rTipoA){
         if(tipoA.equals(rWeak[0])||tipoA.equals(rWeak[1])){
             myEffic = (float) 1.25;
+        }else if(tipoA.equals(rType)){
+            myEffic = 1;
         }else{
             myEffic = (float) 0.75;
         }
         if(rTipoA.equals(myWeak[0])||rTipoA.equals(myWeak[1])){
             rEffic = (float) 1.25;
+        }else if(rTipoA.equals(myType)){
+            rEffic = 1;
         }else{
             rEffic = (float) 0.75;
         }
