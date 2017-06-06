@@ -41,6 +41,21 @@ public class Battle {
         rWeak[1] = MetodosCrearBD.selectMonster(rMonster, 10);
         victory = false;
         defeat = false;
+        myEffic = 1;
+        rEffic = 1;
+    }
+    
+    public void eficiencia(String tipoA, String rTipoA){
+        if(tipoA.equals(rWeak[0])||tipoA.equals(rWeak[1])){
+            myEffic = (float) 1.25;
+        }else{
+            myEffic = (float) 0.75;
+        }
+        if(rTipoA.equals(rWeak[0])||rTipoA.equals(rWeak[1])){
+            rEffic = (float) 1.25;
+        }else{
+            rEffic = (float) 0.75;
+        }
     }
     
     public void fight(int myDamage, int rDamage){
