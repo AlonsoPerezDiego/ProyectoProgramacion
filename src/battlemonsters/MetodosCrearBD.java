@@ -293,4 +293,27 @@ public class MetodosCrearBD {
             System.err.println("Error al mostrar" + ex);
         }
     }
+    
+    public static String selectMonster(int mon, int pos){
+        String[] aux = null;
+        try {
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM bmonstruos WHERE nummon = " + mon  + ";");
+            aux[0] = rs.getString("nmon");
+            aux[1] = rs.getString("tipo");
+            aux[2] = rs.getString("fotomon");
+            aux[3] = rs.getString("fotomonr");
+            aux[4] = String.valueOf(rs.getInt("hpmon"));
+            aux[5] = String.valueOf(rs.getInt("atkmon"));
+            aux[6] = String.valueOf(rs.getInt("defmon"));
+            aux[7] = rs.getString("fort1");
+            aux[8] = rs.getString("fort2");
+            aux[9] = rs.getString("deb1");
+            aux[10] = rs.getString("deb2");
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(MetodosCrearBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return aux[pos];
+    }
 }
