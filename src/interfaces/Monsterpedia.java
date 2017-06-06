@@ -19,6 +19,7 @@ public class Monsterpedia extends javax.swing.JFrame {
      */
     public Monsterpedia() {
         initComponents();
+        this.setLocationRelativeTo(null);
         Metodos.cargarMonsterpedia();
         Metodos.seleccionarLinea();
         Metodos.mostrarMonstruoSeleccionado();
@@ -75,6 +76,7 @@ public class Monsterpedia extends javax.swing.JFrame {
         });
         getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, -1, -1));
 
+        tablaMonstruos.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tablaMonstruos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -91,7 +93,7 @@ public class Monsterpedia extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tablaMonstruos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        tablaMonstruos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tablaMonstruos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tablaMonstruosMouseClicked(evt);
@@ -99,10 +101,10 @@ public class Monsterpedia extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaMonstruos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 250));
 
-        fondoLabel.setText("jLabel1");
-        getContentPane().add(fondoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        fondoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MenuBackgroung.jpg"))); // NOI18N
+        getContentPane().add(fondoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
