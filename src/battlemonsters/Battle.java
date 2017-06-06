@@ -78,4 +78,44 @@ public class Battle {
             defeat=true;
         }
     }
+    
+    public int getMyHP() {
+        return myHP;
+    }
+
+    public int getMyLostHP() {
+        return myLostHP;
+    }
+
+    public int getrHP() {
+        return rHP;
+    }
+
+    public int getrLostHP() {
+        return rLostHP;
+    }
+
+    public String getMyNMon() {
+        return myNMon;
+    }
+
+    public String getrNMon() {
+        return rNMon;
+    }
+
+    public String getMyPic() {
+        return myPic;
+    }
+
+    public String getrPic() {
+        return rPic;
+    }
+
+    public boolean isVictory() {
+        return victory;
+    }
+
+    public boolean isDefeat() {
+        return defeat;
+    }
 }
