@@ -39,7 +39,8 @@ public class Battle {
         rStr[1] = MetodosCrearBD.selectMonster(rMonster, 8);
         rWeak[0] = MetodosCrearBD.selectMonster(rMonster, 9);
         rWeak[1] = MetodosCrearBD.selectMonster(rMonster, 10);
+        victory = false;
+        defeat = false;
     }
-    
     
 }
