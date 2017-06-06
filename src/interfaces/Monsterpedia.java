@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import battlemonsters.Metodos;
 import battlemonsters.MetodosCrearBD;
 
 /**
@@ -18,6 +19,7 @@ public class Monsterpedia extends javax.swing.JFrame {
      */
     public Monsterpedia() {
         initComponents();
+        Metodos.cargarMonsterpedia();
     }
 
     /**
@@ -43,19 +45,19 @@ public class Monsterpedia extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Imagen.setText("jLabel2");
-        getContentPane().add(Imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 114, -1, -1));
+        getContentPane().add(Imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
 
         nombre.setText("jLabel2");
-        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, -1));
+        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
 
         datos1.setText("jLabel3");
-        getContentPane().add(datos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 199, -1, -1));
+        getContentPane().add(datos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
 
         datos2.setText("jLabel4");
-        getContentPane().add(datos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 245, -1, -1));
+        getContentPane().add(datos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
 
         datos3.setText("jLabel5");
-        getContentPane().add(datos3, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 306, -1, -1));
+        getContentPane().add(datos3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, -1, -1));
 
         salir.setBackground(new java.awt.Color(255, 0, 0));
         salir.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,18 +71,16 @@ public class Monsterpedia extends javax.swing.JFrame {
 
         tablaMonstruos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Numero", "Nombre"
             }
         ));
+        tablaMonstruos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane1.setViewportView(tablaMonstruos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 60, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
 
         fondo.setText("jLabel1");
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -137,6 +137,6 @@ public class Monsterpedia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nombre;
     private javax.swing.JButton salir;
-    private javax.swing.JTable tablaMonstruos;
+    public static javax.swing.JTable tablaMonstruos;
     // End of variables declaration//GEN-END:variables
 }

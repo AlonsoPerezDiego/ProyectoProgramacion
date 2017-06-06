@@ -67,6 +67,11 @@ public class SelectOption extends javax.swing.JFrame {
         partida2.setText("Monsterpedia");
         partida2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
         partida2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        partida2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                partida2MouseClicked(evt);
+            }
+        });
         getContentPane().add(partida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 580, 70));
 
         partida3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -105,6 +110,11 @@ public class SelectOption extends javax.swing.JFrame {
         new MainMenu().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_atrasActionPerformed
+
+    private void partida2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_partida2MouseClicked
+        new Monsterpedia().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_partida2MouseClicked
 
     /**
      * @param args the command line arguments

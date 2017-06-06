@@ -39,7 +39,6 @@ public class MetodosCrearBD {
         insertarBMonsterpedia();
         insertarBMonstruos();
         insertarBMovimientos();
-        desconectar();
     }
     public static void crearBMonstruos(){
         try {
@@ -268,4 +267,22 @@ public class MetodosCrearBD {
             System.err.println("Error al insertar en bmonsterpedia");
         }
     }
+   public static void mostrarBMonsterpedia(){
+        try {
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM bmonsterpedia;");
+            while (rs.next()) {
+                String nmonT = rs.getString("nmon");
+                String datos1T = rs.getString("datos1");
+                String datos2T = rs.getString("datos2");
+                String datos3T= rs.getString("datos3");
+                
+                System.out.println("Nombre: "+nmonT);
+                System.out.println("datos1: "+datos1T);
+                System.out.println("datos2: "+datos2T);
+                System.out.println("datos3: "+datos2T);
+            }    } catch (SQLException ex) {
+            System.err.println("Error al mostrar"+ ex);
+        }
+}
 }

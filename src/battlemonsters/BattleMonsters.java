@@ -18,7 +18,8 @@ public class BattleMonsters {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        MetodosCrearBD.conectar();
+        MetodosCrearBD.crear();
         new MainMenu().setVisible(true);
+
     }
 }
