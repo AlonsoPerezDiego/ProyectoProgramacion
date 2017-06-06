@@ -31,33 +31,35 @@ public class Monsterpedia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Imagen = new javax.swing.JLabel();
-        nombre = new javax.swing.JLabel();
-        datos1 = new javax.swing.JLabel();
-        datos2 = new javax.swing.JLabel();
-        datos3 = new javax.swing.JLabel();
+        imagenLabel = new javax.swing.JLabel();
+        nombreLabel = new javax.swing.JLabel();
+        datos1Label = new javax.swing.JLabel();
+        datos2Label = new javax.swing.JLabel();
+        datos3Label = new javax.swing.JLabel();
         salir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaMonstruos = new javax.swing.JTable();
-        fondo = new javax.swing.JLabel();
+        fondoLabel = new javax.swing.JLabel();
+        datosText = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Imagen.setText("jLabel2");
-        getContentPane().add(Imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
+        imagenLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        imagenLabel.setMaximumSize(new java.awt.Dimension(350, 250));
+        imagenLabel.setMinimumSize(new java.awt.Dimension(350, 250));
+        imagenLabel.setPreferredSize(new java.awt.Dimension(350, 250));
+        getContentPane().add(imagenLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 300, 240));
 
-        nombre.setText("jLabel2");
-        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
+        nombreLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 100, 340, 30));
+        getContentPane().add(datos1Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 80, 20));
 
-        datos1.setText("jLabel3");
-        getContentPane().add(datos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
+        datos2Label.setText("jLabel4");
+        getContentPane().add(datos2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
 
-        datos2.setText("jLabel4");
-        getContentPane().add(datos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
-
-        datos3.setText("jLabel5");
-        getContentPane().add(datos3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, -1, -1));
+        datos3Label.setText("jLabel5");
+        getContentPane().add(datos3Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, -1, -1));
 
         salir.setBackground(new java.awt.Color(255, 0, 0));
         salir.setForeground(new java.awt.Color(255, 255, 255));
@@ -82,8 +84,11 @@ public class Monsterpedia extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
 
-        fondo.setText("jLabel1");
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        fondoLabel.setText("jLabel1");
+        getContentPane().add(fondoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        datosText.setEditable(false);
+        getContentPane().add(datosText, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 140, 340, 200));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -129,13 +134,14 @@ public class Monsterpedia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Imagen;
-    private javax.swing.JLabel datos1;
-    private javax.swing.JLabel datos2;
-    private javax.swing.JLabel datos3;
-    private javax.swing.JLabel fondo;
+    private javax.swing.JLabel datos1Label;
+    private javax.swing.JLabel datos2Label;
+    private javax.swing.JLabel datos3Label;
+    public static javax.swing.JTextField datosText;
+    private javax.swing.JLabel fondoLabel;
+    public static javax.swing.JLabel imagenLabel;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel nombre;
+    public static javax.swing.JLabel nombreLabel;
     private javax.swing.JButton salir;
     public static javax.swing.JTable tablaMonstruos;
     // End of variables declaration//GEN-END:variables
