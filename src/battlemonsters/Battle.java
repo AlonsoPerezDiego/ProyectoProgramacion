@@ -51,7 +51,7 @@ public class Battle {
         }else{
             myEffic = (float) 0.75;
         }
-        if(rTipoA.equals(rWeak[0])||rTipoA.equals(rWeak[1])){
+        if(rTipoA.equals(myWeak[0])||rTipoA.equals(myWeak[1])){
             rEffic = (float) 1.25;
         }else{
             rEffic = (float) 0.75;
