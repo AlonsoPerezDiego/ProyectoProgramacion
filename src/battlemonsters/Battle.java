@@ -43,4 +43,39 @@ public class Battle {
         defeat = false;
     }
     
+    public void fight(int myDamage, int rDamage){
+        int speed;
+        do{
+            speed = (int)(Math.random()*10);
+        }while(speed>1);
+        if(speed==1){
+            imFaster(myDamage, rDamage);
+        }else{
+            rIsFaster(myDamage, rDamage);
+        }
+    }
+    
+    private void imFaster(int myDamage, int rDamage){
+        rLostHP = (int)(rLostHP - ((myAttack/rDefense)*(myDamage*myEffic)));
+        if(rLostHP>0){
+            myLostHP = (int)(myLostHP - ((rAttack/myDefense)*(rDamage*rEffic)));
+            if(myLostHP<=0){
+                defeat=true;
+            }
+        }else{
+            victory = true;
+        }
+    }
+    
+    private void rIsFaster(int myDamage, int rDamage){
+        myLostHP = (int)(myLostHP - ((rAttack/myDefense)*(rDamage*rEffic)));
+        if(myLostHP>0){
+            rLostHP = (int)(rLostHP - ((myAttack/rDefense)*(myDamage*myEffic)));
+            if(rLostHP<=0){
+                victory=true;
+            }
+        }else{
+            defeat=true;
+        }
+    }
 }
