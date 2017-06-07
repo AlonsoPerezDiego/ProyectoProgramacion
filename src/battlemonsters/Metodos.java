@@ -78,7 +78,6 @@ public class Metodos {
                 myAtaques[i]=new Ataques(rs.getInt("nummov"),rs.getString("nmov"),rs.getString("tipo"),rs.getInt("daño"),rs.getInt("usos"));
             }
         } catch (SQLException ex) {
-            System.out.println("Fallo en la carga del array");
             cargarMyAtaques();
         }
     }
@@ -98,7 +97,6 @@ public class Metodos {
                 rAtaques[i]=new Ataques(rs.getInt("nummov"),rs.getString("nmov"),rs.getString("tipo"),rs.getInt("daño"),rs.getInt("usos"));
             }
         } catch (SQLException ex) {
-            System.out.println("Fallo en la carga del array");
             cargarRAtaques();
         }
     }
