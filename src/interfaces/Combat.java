@@ -18,11 +18,12 @@ public class Combat extends javax.swing.JFrame {
     /**
      * Creates new form Combat
      */
-    Battle fight = new Battle(intRandom20(),intRandom20());
+    Battle fight;
     
     public Combat() {
         initComponents();
         this.setLocationRelativeTo(null);
+        fight = new Battle(intRandom20(),intRandom20());
     }
 
     /**
