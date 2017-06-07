@@ -22,6 +22,8 @@ import javax.swing.table.DefaultTableModel;
 public class Metodos {
     static Random rdn=new Random();
     static String elecMon;
+    static Ataques[]myAtaques;
+    static Ataques[]rAtaques;
     public static void cargarMonsterpedia(){
         DefaultTableModel modelo=(DefaultTableModel) Monsterpedia.tablaMonstruos.getModel();
         try {
@@ -65,11 +67,11 @@ public class Metodos {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public static Ataques[] cargarMyAtaques(){
+    public static void cargarMyAtaques(){
         try {
             stmt=conn.createStatement();
             int[]codAtaquesA=new int[4];
-            Ataques[]myAtaques=new Ataques[4];
+            myAtaques=new Ataques[4];
             for(int i=0;i<codAtaquesA.length;i++){
                 codAtaquesA[i]=rdn.nextInt(35)+1;
                 ResultSet rs=stmt.executeQuery("select * from bmovimientos where nummov="+codAtaquesA[i]+";");
@@ -77,13 +79,19 @@ public class Metodos {
             }
         } catch (SQLException ex) {
             System.out.println("Fallo en la carga del array");
+            cargarMyAtaques();
         }
     }
-    public static Ataques[] cargarRAtaques(){
+    
+    public static Ataques getAtaques(int pos){
+        return myAtaques[pos];
+    }
+    
+    public static void cargarRAtaques(){
         try {
             stmt=conn.createStatement();
             int[]codrAtaquesA=new int[4];
-            Ataques[]rAtaques=new Ataques[4];
+            rAtaques=new Ataques[4];
             for(int i=0;i<codrAtaquesA.length;i++){
                 codrAtaquesA[i]=rdn.nextInt(35)+1;
                 ResultSet rs=stmt.executeQuery("select * from bmovimientos where nummov="+codrAtaquesA[i]+";");
@@ -91,6 +99,11 @@ public class Metodos {
             }
         } catch (SQLException ex) {
             System.out.println("Fallo en la carga del array");
+            cargarRAtaques();
         }
+    }
+    
+    public static Ataques getRAtaques(int pos){
+        return rAtaques[pos];
     }
 }
