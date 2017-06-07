@@ -11,12 +11,13 @@ package battlemonsters;
  */
 public class Ataques {
     private String nombre, tipo;
-    private int daño, usos;
+    private int daño, usos, numeroMov;
 
     public Ataques() {
     }
 
-    public Ataques(String nombre, String tipo, int daño, int usos) {
+    public Ataques(int numeroMov,String nombre, String tipo, int daño, int usos) {
+        this.numeroMov =numeroMov;
         this.nombre = nombre;
         this.tipo = tipo;
         this.daño = daño;
