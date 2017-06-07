@@ -7,6 +7,7 @@ package interfaces;
 
 import battlemonsters.Battle;
 import battlemonsters.MetodosCrearBD;
+import javax.swing.ImageIcon;
 import static lib.Op.intRandom20;
 
 /**
@@ -24,6 +25,8 @@ public class Combat extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         fight = new Battle(intRandom20(),intRandom20());
+        miMonstruo.setIcon(new ImageIcon(fight.getMyPic()));
+        rMonstruo.setIcon(new ImageIcon(fight.getrPic()));
     }
 
     /**
