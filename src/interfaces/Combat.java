@@ -38,8 +38,13 @@ public class Combat extends javax.swing.JFrame {
         ataque3.setText(Metodos.getAtaques(2).getNombre() + " - " + Metodos.getAtaques(2).getUsos());
         ataque4.setText(Metodos.getAtaques(3).getNombre() + " - " + Metodos.getAtaques(3).getUsos());
         Metodos.cargarRAtaques();
+        marcadores();
     }
     
+    private void marcadores(){
+        nombreMiMonstruo.setText(fight.getMyNMon() + "   " + fight.getMyLostHP() + "/" + fight.getMyHP());
+        nombreRMonstruo.setText(fight.getrNMon() + "   " + fight.getrLostHP() + "/" + fight.getrHP());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,6 +61,8 @@ public class Combat extends javax.swing.JFrame {
         ataque3 = new javax.swing.JButton();
         ataque4 = new javax.swing.JButton();
         atras = new javax.swing.JButton();
+        nombreRMonstruo = new javax.swing.JLabel();
+        nombreMiMonstruo = new javax.swing.JLabel();
         rMonstruo = new javax.swing.JLabel();
         miMonstruo = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
@@ -95,6 +102,16 @@ public class Combat extends javax.swing.JFrame {
             }
         });
         getContentPane().add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        nombreRMonstruo.setBackground(new java.awt.Color(255, 255, 255));
+        nombreRMonstruo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nombreRMonstruo.setOpaque(true);
+        getContentPane().add(nombreRMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 240, 70));
+
+        nombreMiMonstruo.setBackground(new java.awt.Color(255, 255, 255));
+        nombreMiMonstruo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nombreMiMonstruo.setOpaque(true);
+        getContentPane().add(nombreMiMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 450, 240, 70));
 
         rMonstruo.setMaximumSize(new java.awt.Dimension(350, 250));
         rMonstruo.setMinimumSize(new java.awt.Dimension(350, 250));
@@ -166,6 +183,8 @@ public class Combat extends javax.swing.JFrame {
     private javax.swing.JButton atras;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel miMonstruo;
+    private javax.swing.JLabel nombreMiMonstruo;
+    private javax.swing.JLabel nombreRMonstruo;
     private javax.swing.JLabel rMonstruo;
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
