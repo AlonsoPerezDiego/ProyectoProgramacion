@@ -7,13 +7,11 @@ package battlemonsters;
 
 import static battlemonsters.MetodosCrearBD.*;
 import interfaces.Monsterpedia;
-import java.awt.Image;
-import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,6 +20,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Adry
  */
 public class Metodos {
+    static Random rdn=new Random();
     static String elecMon;
     public static void cargarMonsterpedia(){
         DefaultTableModel modelo=(DefaultTableModel) Monsterpedia.tablaMonstruos.getModel();
@@ -64,6 +63,34 @@ public class Metodos {
             rs.close();
         } catch (SQLException ex) {
             Logger.getLogger(Metodos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public static Ataques[] cargarMyAtaques(){
+        try {
+            stmt=conn.createStatement();
+            int[]codAtaquesA=new int[4];
+            Ataques[]myAtaques=new Ataques[4];
+            for(int i=0;i<codAtaquesA.length;i++){
+                codAtaquesA[i]=rdn.nextInt(35)+1;
+                ResultSet rs=stmt.executeQuery("select * from bmovimientos where nummov="+codAtaquesA[i]+";");
+                myAtaques[i]=new Ataques(rs.getInt("nummov"),rs.getString("nmov"),rs.getString("tipo"),rs.getInt("daño"),rs.getInt("usos"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("Fallo en la carga del array");
+        }
+    }
+    public static Ataques[] cargarRAtaques(){
+        try {
+            stmt=conn.createStatement();
+            int[]codrAtaquesA=new int[4];
+            Ataques[]rAtaques=new Ataques[4];
+            for(int i=0;i<codrAtaquesA.length;i++){
+                codrAtaquesA[i]=rdn.nextInt(35)+1;
+                ResultSet rs=stmt.executeQuery("select * from bmovimientos where nummov="+codrAtaquesA[i]+";");
+                rAtaques[i]=new Ataques(rs.getInt("nummov"),rs.getString("nmov"),rs.getString("tipo"),rs.getInt("daño"),rs.getInt("usos"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("Fallo en la carga del array");
         }
     }
 }
