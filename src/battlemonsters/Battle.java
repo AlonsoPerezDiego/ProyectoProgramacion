@@ -10,9 +10,8 @@ package battlemonsters;
  * @author Diego
  */
 public class Battle {
-    private String[] myStr, rStr, myWeak, rWeak;
     private int myHP, myAttack, myDefense, myLostHP, rHP, rAttack, rDefense, rLostHP;
-    private String myPic, rPic, myNMon, rNMon, myType, rType;
+    private String myPic, rPic, myNMon, rNMon, myType, rType, myStr1, myStr2, rStr1, rStr2, myWeak1, myWeak2, rWeak1, rWeak2;
     private float myEffic, rEffic;
     private boolean victory, defeat;
     
@@ -24,10 +23,10 @@ public class Battle {
         myAttack = Integer.parseInt(MetodosCrearBD.selectMonster(myMonster, 5));
         myDefense = Integer.parseInt(MetodosCrearBD.selectMonster(myMonster, 6));
         myLostHP = myHP;
-        myStr[0] = MetodosCrearBD.selectMonster(myMonster, 7);
-        myStr[1] = MetodosCrearBD.selectMonster(myMonster, 8);
-        myWeak[0] = MetodosCrearBD.selectMonster(myMonster, 9);
-        myWeak[1] = MetodosCrearBD.selectMonster(myMonster, 10);
+        myStr1 = MetodosCrearBD.selectMonster(myMonster, 7);
+        myStr2 = MetodosCrearBD.selectMonster(myMonster, 8);
+        myWeak1 = MetodosCrearBD.selectMonster(myMonster, 9);
+        myWeak2 = MetodosCrearBD.selectMonster(myMonster, 10);
         rNMon = MetodosCrearBD.selectMonster(rMonster, 0);
         rType = MetodosCrearBD.selectMonster(rMonster, 1);
         rPic = MetodosCrearBD.selectMonster(rMonster, 3);
@@ -35,10 +34,10 @@ public class Battle {
         rAttack = Integer.parseInt(MetodosCrearBD.selectMonster(rMonster, 5));
         rDefense = Integer.parseInt(MetodosCrearBD.selectMonster(rMonster, 6));
         rLostHP = rHP;
-        rStr[0] = MetodosCrearBD.selectMonster(rMonster, 7);
-        rStr[1] = MetodosCrearBD.selectMonster(rMonster, 8);
-        rWeak[0] = MetodosCrearBD.selectMonster(rMonster, 9);
-        rWeak[1] = MetodosCrearBD.selectMonster(rMonster, 10);
+        rStr1 = MetodosCrearBD.selectMonster(rMonster, 7);
+        rStr2 = MetodosCrearBD.selectMonster(rMonster, 8);
+        rWeak1 = MetodosCrearBD.selectMonster(rMonster, 9);
+        rWeak2 = MetodosCrearBD.selectMonster(rMonster, 10);
         victory = false;
         defeat = false;
         myEffic = 1;
@@ -46,14 +45,14 @@ public class Battle {
     }
     
     public void eficiencia(String tipoA, String rTipoA){
-        if(tipoA.equals(rWeak[0])||tipoA.equals(rWeak[1])){
+        if(tipoA.equals(rWeak1)||tipoA.equals(rWeak2)){
             myEffic = (float) 1.25;
         }else if(tipoA.equals(rType)){
             myEffic = 1;
         }else{
             myEffic = (float) 0.75;
         }
-        if(rTipoA.equals(myWeak[0])||rTipoA.equals(myWeak[1])){
+        if(rTipoA.equals(myWeak1)||rTipoA.equals(myWeak2)){
             rEffic = (float) 1.25;
         }else if(rTipoA.equals(myType)){
             rEffic = 1;
