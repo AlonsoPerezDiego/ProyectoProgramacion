@@ -33,12 +33,16 @@ public class Combat extends javax.swing.JFrame {
         miMonstruo.setIcon(new ImageIcon(fight.getMyPic()));
         rMonstruo.setIcon(new ImageIcon(fight.getrPic()));
         Metodos.cargarMyAtaques();
+        cargarBotones();
+        Metodos.cargarRAtaques();
+        marcadores();
+    }
+    
+    private void cargarBotones(){
         ataque1.setText(Metodos.getAtaques(0).getNombre() + " - " + Metodos.getAtaques(0).getUsos());
         ataque2.setText(Metodos.getAtaques(1).getNombre() + " - " + Metodos.getAtaques(1).getUsos());
         ataque3.setText(Metodos.getAtaques(2).getNombre() + " - " + Metodos.getAtaques(2).getUsos());
         ataque4.setText(Metodos.getAtaques(3).getNombre() + " - " + Metodos.getAtaques(3).getUsos());
-        Metodos.cargarRAtaques();
-        marcadores();
     }
     
     private void marcadores(){
@@ -82,15 +86,35 @@ public class Combat extends javax.swing.JFrame {
         getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
 
         ataque1.setText("jButton2");
+        ataque1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ataque1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(ataque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 240, 70));
 
         ataque2.setText("jButton3");
+        ataque2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ataque2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(ataque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 620, 240, 70));
 
         ataque3.setText("jButton4");
+        ataque3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ataque3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(ataque3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 620, 240, 70));
 
         ataque4.setText("jButton1");
+        ataque4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ataque4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(ataque4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 530, 240, 70));
 
         atras.setBackground(new java.awt.Color(0, 0, 0));
@@ -138,6 +162,46 @@ public class Combat extends javax.swing.JFrame {
         new SelectOption().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_atrasActionPerformed
+
+    private void ataque1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataque1ActionPerformed
+        fight.fight(Metodos.getAtaques(0).getDaño(), Metodos.getRAtaques(unoDeCuatro()).getDaño());
+        Metodos.getAtaques(0).setUsos(Metodos.getAtaques(0).getUsos()-1);
+        if(Metodos.getAtaques(0).getUsos()==0){
+            ataque1.setEnabled(false);
+        }
+        marcadores();
+        cargarBotones();
+    }//GEN-LAST:event_ataque1ActionPerformed
+
+    private void ataque2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataque2ActionPerformed
+        fight.fight(Metodos.getAtaques(1).getDaño(), Metodos.getRAtaques(unoDeCuatro()).getDaño());
+        Metodos.getAtaques(1).setUsos(Metodos.getAtaques(1).getUsos()-1);
+        if(Metodos.getAtaques(1).getUsos()==0){
+            ataque2.setEnabled(false);
+        }
+        marcadores();
+        cargarBotones();
+    }//GEN-LAST:event_ataque2ActionPerformed
+
+    private void ataque3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataque3ActionPerformed
+        fight.fight(Metodos.getAtaques(2).getDaño(), Metodos.getRAtaques(unoDeCuatro()).getDaño());
+        Metodos.getAtaques(2).setUsos(Metodos.getAtaques(2).getUsos()-1);
+        if(Metodos.getAtaques(2).getUsos()==0){
+            ataque3.setEnabled(false);
+        }
+        marcadores();
+        cargarBotones();
+    }//GEN-LAST:event_ataque3ActionPerformed
+
+    private void ataque4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataque4ActionPerformed
+        fight.fight(Metodos.getAtaques(3).getDaño(), Metodos.getRAtaques(unoDeCuatro()).getDaño());
+        Metodos.getAtaques(3).setUsos(Metodos.getAtaques(3).getUsos()-1);
+        if(Metodos.getAtaques(3).getUsos()==0){
+            ataque4.setEnabled(false);
+        }
+        marcadores();
+        cargarBotones();
+    }//GEN-LAST:event_ataque4ActionPerformed
 
     /**
      * @param args the command line arguments
