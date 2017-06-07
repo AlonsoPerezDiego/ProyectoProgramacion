@@ -38,6 +38,7 @@ public class Monsterpedia extends javax.swing.JFrame {
         imagenLabel = new javax.swing.JLabel();
         nombreLabel = new javax.swing.JLabel();
         datos1Label = new javax.swing.JLabel();
+        atras = new javax.swing.JButton();
         datos2Label = new javax.swing.JLabel();
         datos3Label = new javax.swing.JLabel();
         salir = new javax.swing.JButton();
@@ -46,6 +47,7 @@ public class Monsterpedia extends javax.swing.JFrame {
         fondoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         imagenLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -59,6 +61,16 @@ public class Monsterpedia extends javax.swing.JFrame {
 
         datos1Label.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
         getContentPane().add(datos1Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 140, 440, 30));
+
+        atras.setBackground(new java.awt.Color(0, 0, 0));
+        atras.setForeground(new java.awt.Color(255, 255, 255));
+        atras.setText("<|=");
+        atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         datos2Label.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
         getContentPane().add(datos2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, 440, 30));
@@ -74,7 +86,7 @@ public class Monsterpedia extends javax.swing.JFrame {
                 salirActionPerformed(evt);
             }
         });
-        getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, -1, -1));
+        getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
 
         tablaMonstruos.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tablaMonstruos.setModel(new javax.swing.table.DefaultTableModel(
@@ -104,7 +116,7 @@ public class Monsterpedia extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 250));
 
         fondoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MenuBackgroung.jpg"))); // NOI18N
-        getContentPane().add(fondoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 570));
+        getContentPane().add(fondoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,6 +130,11 @@ public class Monsterpedia extends javax.swing.JFrame {
         Metodos.seleccionarLinea();
         Metodos.mostrarMonstruoSeleccionado();
     }//GEN-LAST:event_tablaMonstruosMouseClicked
+
+    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
+        new SelectOption().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_atrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +172,7 @@ public class Monsterpedia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton atras;
     public static javax.swing.JLabel datos1Label;
     public static javax.swing.JLabel datos2Label;
     public static javax.swing.JLabel datos3Label;
