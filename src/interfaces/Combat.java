@@ -7,6 +7,7 @@ package interfaces;
 
 import battlemonsters.Ataques;
 import battlemonsters.Battle;
+import battlemonsters.Metodos;
 import battlemonsters.MetodosCrearBD;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -23,7 +24,7 @@ public class Combat extends javax.swing.JFrame {
      * Creates new form Combat
      */
     Battle fight;
-    ArrayList<Ataques> myAttacks, rAttacks;
+//    ArrayList<Ataques> myAttacks, rAttacks;
     
     public Combat() {
         initComponents();
@@ -31,62 +32,15 @@ public class Combat extends javax.swing.JFrame {
         fight = new Battle(intRandom20(),intRandom20());
         miMonstruo.setIcon(new ImageIcon(fight.getMyPic()));
         rMonstruo.setIcon(new ImageIcon(fight.getrPic()));
-//        vaciarAtaques();
-//        cargarMisAtaques();
-//        cargarRAtaques();
-//        ataque1.setText(myAttacks.get(0).getNombre() + " " + String.valueOf(myAttacks.get(0).getUsos()));
-//        ataque2.setText(myAttacks.get(1).getNombre() + " " + String.valueOf(myAttacks.get(1).getUsos()));
-//        ataque3.setText(myAttacks.get(2).getNombre() + " " + String.valueOf(myAttacks.get(2).getUsos()));
-//        ataque4.setText(myAttacks.get(3).getNombre() + " " + String.valueOf(myAttacks.get(3).getUsos()));
+        Metodos.cargarMyAtaques();
+        ataque1.setText(Metodos.getAtaques(0).getNombre() + " - " + Metodos.getAtaques(0).getUsos());
+        ataque2.setText(Metodos.getAtaques(1).getNombre() + " - " + Metodos.getAtaques(1).getUsos());
+        ataque3.setText(Metodos.getAtaques(2).getNombre() + " - " + Metodos.getAtaques(2).getUsos());
+        ataque4.setText(Metodos.getAtaques(3).getNombre() + " - " + Metodos.getAtaques(3).getUsos());
+        Metodos.cargarRAtaques();
     }
     
-//    private void vaciarAtaques(){
-//        myAttacks = new ArrayList<Ataques>();
-//        rAttacks = new ArrayList<Ataques>();
-//    }
-    
-//    private int miAtaque(int num, int rep){
-//        boolean repetido = false;
-//        Ataques my = new Ataques(MetodosCrearBD.selectAttack(num, 0), MetodosCrearBD.selectAttack(num, 1), Integer.parseInt(MetodosCrearBD.selectAttack(num, 2)), Integer.parseInt(MetodosCrearBD.selectAttack(num,3)));
-//        for (int i = 0; i<myAttacks.size(); i++) {
-//            if(MetodosCrearBD.selectAttack(num, 0).equals(myAttacks.get(i).getNombre())){
-//                repetido = true;
-//            }
-//        }
-//        if(repetido){
-//            return rep--;
-//        }else{
-//            myAttacks.add(my);
-//            return rep;
-//        }
-//    }
 
-//    private void cargarMisAtaques(){
-//        for(int i =0; i<4; i++){
-//            i = miAtaque(intRandom35(), i);
-//        }
-//    }
-//    private int rAtaque(int num, int rep){
-//        boolean repetido = false;
-//        Ataques r = new Ataques(MetodosCrearBD.selectAttack(num, 0), MetodosCrearBD.selectAttack(num, 1), Integer.parseInt(MetodosCrearBD.selectAttack(num, 2)), Integer.parseInt(MetodosCrearBD.selectAttack(num, 3)));
-//        for (int i = 0; i<rAttacks.size(); i++) {
-//            if(MetodosCrearBD.selectAttack(num, 0).equals(rAttacks.get(i).getNombre())){
-//                repetido = true;
-//            }
-//        }
-//        if(repetido){
-//            return rep--;
-//        }else{
-//            rAttacks.add(r);
-//            return rep;
-//        }
-//    }
-//
-//    private void cargarRAtaques(){
-//        for(int i =0; i<4; i++){
-//            i = rAtaque(intRandom35(), i);
-//        }
-//    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
