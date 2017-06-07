@@ -326,6 +326,7 @@ public class MetodosCrearBD {
             aux[1] = rs.getString("tipo");
             aux[2] = String.valueOf(rs.getInt("daño"));
             aux[3] = String.valueOf(rs.getInt("usos"));
+            rs.close();
         } catch (SQLException ex) {
             Logger.getLogger(MetodosCrearBD.class.getName()).log(Level.SEVERE, null, ex);
         }
