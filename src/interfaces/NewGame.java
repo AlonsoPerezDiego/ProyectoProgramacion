@@ -78,14 +78,12 @@ public class NewGame extends javax.swing.JFrame {
 
     private void continuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuarActionPerformed
         new SelectOption().setVisible(true);
-        new MainMenu().setVisible(false);
         this.setVisible(false);
     }//GEN-LAST:event_continuarActionPerformed
 
     private void nuevaPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevaPartidaActionPerformed
         new NewPlayer().setVisible(true);
         this.setVisible(false);
-        new MainMenu().setVisible(false);
     }//GEN-LAST:event_nuevaPartidaActionPerformed
 
     /**
