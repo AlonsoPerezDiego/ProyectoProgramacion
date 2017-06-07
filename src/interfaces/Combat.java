@@ -5,8 +5,10 @@
  */
 package interfaces;
 
+import battlemonsters.Ataques;
 import battlemonsters.Battle;
 import battlemonsters.MetodosCrearBD;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import static lib.Op.intRandom20;
 
@@ -20,6 +22,7 @@ public class Combat extends javax.swing.JFrame {
      * Creates new form Combat
      */
     Battle fight;
+    ArrayList<Ataques> myAttacks, rAttacks;
     
     public Combat() {
         initComponents();
@@ -27,6 +30,8 @@ public class Combat extends javax.swing.JFrame {
         fight = new Battle(intRandom20(),intRandom20());
         miMonstruo.setIcon(new ImageIcon(fight.getMyPic()));
         rMonstruo.setIcon(new ImageIcon(fight.getrPic()));
+        myAttacks = new ArrayList<Ataques>();
+        rAttacks = new ArrayList<Ataques>();
     }
 
     /**
