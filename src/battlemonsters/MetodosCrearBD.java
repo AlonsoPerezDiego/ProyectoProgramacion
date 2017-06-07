@@ -295,7 +295,7 @@ public class MetodosCrearBD {
     }
     
     public static String selectMonster(int mon, int pos){
-        String[] aux = null;
+        String[] aux = new String[11];
         try {
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM bmonstruos WHERE nummon = " + mon  + ";");
@@ -315,5 +315,11 @@ public class MetodosCrearBD {
             Logger.getLogger(MetodosCrearBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return aux[pos];
+    }
+    
+    public static String selectAttack(int atk, int pos){
+        
+        
+        return "";
     }
 }
