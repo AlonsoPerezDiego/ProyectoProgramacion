@@ -87,6 +87,7 @@ public class Combat extends javax.swing.JFrame {
         getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
 
         ataque1.setText("jButton2");
+        ataque1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ataque1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ataque1ActionPerformed(evt);
@@ -95,6 +96,7 @@ public class Combat extends javax.swing.JFrame {
         getContentPane().add(ataque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 550, 290, 70));
 
         ataque2.setText("jButton3");
+        ataque2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ataque2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ataque2ActionPerformed(evt);
@@ -103,6 +105,7 @@ public class Combat extends javax.swing.JFrame {
         getContentPane().add(ataque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 620, 290, 70));
 
         ataque3.setText("jButton4");
+        ataque3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ataque3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ataque3ActionPerformed(evt);
@@ -111,6 +114,7 @@ public class Combat extends javax.swing.JFrame {
         getContentPane().add(ataque3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 620, 290, 70));
 
         ataque4.setText("jButton1");
+        ataque4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ataque4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ataque4ActionPerformed(evt);
