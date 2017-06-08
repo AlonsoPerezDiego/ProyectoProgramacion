@@ -69,6 +69,7 @@ public class Combat extends javax.swing.JFrame {
         nombreMiMonstruo = new javax.swing.JLabel();
         rMonstruo = new javax.swing.JLabel();
         miMonstruo = new javax.swing.JLabel();
+        eficaciaLabel = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -125,12 +126,12 @@ public class Combat extends javax.swing.JFrame {
                 atrasActionPerformed(evt);
             }
         });
-        getContentPane().add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, -1));
 
         nombreRMonstruo.setBackground(new java.awt.Color(255, 255, 255));
         nombreRMonstruo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nombreRMonstruo.setOpaque(true);
-        getContentPane().add(nombreRMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 290, 70));
+        getContentPane().add(nombreRMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 290, 70));
 
         nombreMiMonstruo.setBackground(new java.awt.Color(255, 255, 255));
         nombreMiMonstruo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -146,6 +147,9 @@ public class Combat extends javax.swing.JFrame {
         miMonstruo.setMinimumSize(new java.awt.Dimension(350, 250));
         miMonstruo.setPreferredSize(new java.awt.Dimension(350, 250));
         getContentPane().add(miMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, -1, -1));
+
+        eficaciaLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eficiencias.png"))); // NOI18N
+        getContentPane().add(eficaciaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 200, 180));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Backgroung.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -264,6 +268,7 @@ public class Combat extends javax.swing.JFrame {
     private javax.swing.JButton ataque3;
     private javax.swing.JButton ataque4;
     private javax.swing.JButton atras;
+    private javax.swing.JLabel eficaciaLabel;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel miMonstruo;
     private javax.swing.JLabel nombreMiMonstruo;
