@@ -5,7 +5,9 @@
  */
 package interfaces;
 
+import battlemonsters.Metodos;
 import battlemonsters.MetodosCrearBD;
+import java.awt.HeadlessException;
 
 /**
  *
@@ -16,8 +18,14 @@ public class EndBattle extends javax.swing.JFrame {
     /**
      * Creates new form EndBattle
      */
-    public EndBattle() {
+    
+    public EndBattle() throws HeadlessException {
+    }
+
+    public EndBattle(boolean ending) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        Metodos.sumarAlHistorial(ending);
     }
 
     /**
