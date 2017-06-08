@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import battlemonsters.MetodosUsuario;
+
 /**
  *
  * @author Diego
@@ -120,7 +122,9 @@ public class NewPlayer extends javax.swing.JFrame {
     private void boyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boyActionPerformed
         new SelectOption().setVisible(true);
         this.setVisible(false);
-
+        nombre = name.getText();
+        sexo = "hombre";
+        MetodosUsuario.borrarJugador();
     }//GEN-LAST:event_boyActionPerformed
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
@@ -130,10 +134,17 @@ public class NewPlayer extends javax.swing.JFrame {
     private void girlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_girlActionPerformed
         new SelectOption().setVisible(true);
         this.setVisible(false);
+        nombre = name.getText();
+        sexo = "mujer";
+        MetodosUsuario.borrarJugador();
     }//GEN-LAST:event_girlActionPerformed
 
     public static String getNombre(){
         return nombre;
+    }
+    
+    public static String getSexo(){
+        return sexo;
     }
     /**
      * @param args the command line arguments
