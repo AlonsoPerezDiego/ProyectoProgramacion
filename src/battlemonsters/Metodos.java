@@ -120,14 +120,16 @@ public class Metodos {
             numDerrotas = rs.getInt("plose");
             if (resultadoCombate == true) {
                 numVictorias++;
-                stmt.executeUpdate("update from jugador set pwin=" + numVictorias + " where numxogador=" + MainMenu.getPartida() + ";");
+                stmt.executeUpdate("update jugador set pwin=" + numVictorias + " where numxogador=" + MainMenu.getPartida() + ";");
+                conn.commit();
             } else {
                 numDerrotas++;
-                stmt.executeUpdate("update from jugador set plose=" + numDerrotas + " where numxogador=" + MainMenu.getPartida() + ";");
+                stmt.executeUpdate("update jugador set plose=" + numDerrotas + " where numxogador=" + MainMenu.getPartida() + ";");
+                conn.commit();
             }
             rs.close();
         } catch (SQLException ex) {
-            System.err.println("Fallo al actualizar las victorias/derrotas");
+            System.err.println("Fallo al actualizar las victorias/derrotas"+ex);
         }
 
     }
