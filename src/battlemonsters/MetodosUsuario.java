@@ -56,7 +56,7 @@ public class MetodosUsuario {
         }
     }
     
-    public static String nombre(int par){
+    public static String cargarNombre(int par){
         String nombre = null;
         try {
             stmt=conn.createStatement();
@@ -64,7 +64,6 @@ public class MetodosUsuario {
             nombre = rs.getString("njugador");
             rs.close();
         } catch (SQLException ex) {
-            System.err.println("Fallo al cargar jugador" +ex);
         }
         return nombre;
     }   
