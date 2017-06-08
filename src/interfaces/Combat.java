@@ -91,7 +91,7 @@ public class Combat extends javax.swing.JFrame {
                 ataque1ActionPerformed(evt);
             }
         });
-        getContentPane().add(ataque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 240, 70));
+        getContentPane().add(ataque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 550, 290, 70));
 
         ataque2.setText("jButton3");
         ataque2.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +99,7 @@ public class Combat extends javax.swing.JFrame {
                 ataque2ActionPerformed(evt);
             }
         });
-        getContentPane().add(ataque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 620, 240, 70));
+        getContentPane().add(ataque2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 620, 290, 70));
 
         ataque3.setText("jButton4");
         ataque3.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +107,7 @@ public class Combat extends javax.swing.JFrame {
                 ataque3ActionPerformed(evt);
             }
         });
-        getContentPane().add(ataque3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 620, 240, 70));
+        getContentPane().add(ataque3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 620, 290, 70));
 
         ataque4.setText("jButton1");
         ataque4.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +115,7 @@ public class Combat extends javax.swing.JFrame {
                 ataque4ActionPerformed(evt);
             }
         });
-        getContentPane().add(ataque4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 530, 240, 70));
+        getContentPane().add(ataque4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 550, 290, 70));
 
         atras.setBackground(new java.awt.Color(0, 0, 0));
         atras.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,12 +130,12 @@ public class Combat extends javax.swing.JFrame {
         nombreRMonstruo.setBackground(new java.awt.Color(255, 255, 255));
         nombreRMonstruo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nombreRMonstruo.setOpaque(true);
-        getContentPane().add(nombreRMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 240, 70));
+        getContentPane().add(nombreRMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 290, 70));
 
         nombreMiMonstruo.setBackground(new java.awt.Color(255, 255, 255));
         nombreMiMonstruo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nombreMiMonstruo.setOpaque(true);
-        getContentPane().add(nombreMiMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 450, 240, 70));
+        getContentPane().add(nombreMiMonstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, 290, 70));
 
         rMonstruo.setMaximumSize(new java.awt.Dimension(350, 250));
         rMonstruo.setMinimumSize(new java.awt.Dimension(350, 250));
