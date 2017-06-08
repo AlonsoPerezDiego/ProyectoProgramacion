@@ -8,6 +8,7 @@ package interfaces;
 import battlemonsters.Metodos;
 import battlemonsters.MetodosCrearBD;
 import java.awt.HeadlessException;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -26,6 +27,16 @@ public class EndBattle extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         Metodos.sumarAlHistorial(ending);
+        imagenFinal(ending);
+        
+    }
+    
+    private void imagenFinal(boolean ending){
+        if(ending){
+            end.setIcon(new ImageIcon("Personajes/Victory.png"));
+        }else{
+            end.setIcon(new ImageIcon("Personajes/defeat.png"));
+        }
     }
 
     /**
@@ -54,6 +65,13 @@ public class EndBattle extends javax.swing.JFrame {
             }
         });
         getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
+
+        end.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        end.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                endMouseClicked(evt);
+            }
+        });
         getContentPane().add(end, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 640, 210));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EndBackground.jpg"))); // NOI18N
@@ -66,6 +84,11 @@ public class EndBattle extends javax.swing.JFrame {
         MetodosCrearBD.desconectar();
         System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
+
+    private void endMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_endMouseClicked
+        new SelectOption().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_endMouseClicked
 
     /**
      * @param args the command line arguments
