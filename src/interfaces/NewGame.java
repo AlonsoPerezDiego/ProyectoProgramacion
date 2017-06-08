@@ -35,6 +35,7 @@ public class NewGame extends javax.swing.JFrame {
         victorias = new javax.swing.JLabel();
         derrotas = new javax.swing.JLabel();
         textoNG = new javax.swing.JLabel();
+        codPartidaLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 400));
@@ -48,7 +49,7 @@ public class NewGame extends javax.swing.JFrame {
                 continuarActionPerformed(evt);
             }
         });
-        getContentPane().add(continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 230, 70));
+        getContentPane().add(continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 240, 70));
 
         nuevaPartida.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nuevaPartida.setText("Nueva partida");
@@ -57,21 +58,29 @@ public class NewGame extends javax.swing.JFrame {
                 nuevaPartidaActionPerformed(evt);
             }
         });
-        getContentPane().add(nuevaPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 230, 70));
-        getContentPane().add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 390));
+        getContentPane().add(nuevaPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 240, 70));
+
+        foto.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 390));
 
         nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 4, 270, 60));
+        nombre.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 240, 40));
 
         victorias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(victorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 64, 270, 40));
+        victorias.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(victorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 240, 40));
 
         derrotas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(derrotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 260, 40));
+        derrotas.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(derrotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 240, 40));
 
         textoNG.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textoNG.setText("(Se borrarán los datos actuales)");
-        getContentPane().add(textoNG, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 230, 40));
+        getContentPane().add(textoNG, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 240, 40));
+
+        codPartidaLabel.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(codPartidaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 40, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,12 +131,13 @@ public class NewGame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel codPartidaLabel;
     private javax.swing.JButton continuar;
-    private javax.swing.JLabel derrotas;
-    private javax.swing.JLabel foto;
-    private javax.swing.JLabel nombre;
+    public static javax.swing.JLabel derrotas;
+    public static javax.swing.JLabel foto;
+    public static javax.swing.JLabel nombre;
     private javax.swing.JButton nuevaPartida;
     private javax.swing.JLabel textoNG;
-    private javax.swing.JLabel victorias;
+    public static javax.swing.JLabel victorias;
     // End of variables declaration//GEN-END:variables
 }
