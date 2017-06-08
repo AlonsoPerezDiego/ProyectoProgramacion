@@ -6,6 +6,7 @@
 package interfaces;
 
 import battlemonsters.MetodosCrearBD;
+import battlemonsters.MetodosUsuario;
 
 /**
  *
@@ -20,6 +21,13 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         initComponents();
         this.setLocationRelativeTo(null);
+        cargarBotones();
+    }
+    
+    private void cargarBotones(){
+        partida1.setText("Jugador 1: " + MetodosUsuario.nombre(1));
+        partida2.setText("Jugador 2: " + MetodosUsuario.nombre(2));
+        partida3.setText("Jugador 3: " + MetodosUsuario.nombre(3));
     }
 
     /**
