@@ -317,19 +317,4 @@ public class MetodosCrearBD {
         return aux[pos];
     }
     
-    public static String selectAttack(int atk, int pos){
-        String[] aux = new String[4];
-        try {
-            stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM bmovimientos WHERE nummov = " + atk + ";");
-            aux[0] = rs.getString("nmov");
-            aux[1] = rs.getString("tipo");
-            aux[2] = String.valueOf(rs.getInt("daño"));
-            aux[3] = String.valueOf(rs.getInt("usos"));
-            rs.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(MetodosCrearBD.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return aux[pos];
-    }
 }
