@@ -161,6 +161,7 @@ public class Combat extends javax.swing.JFrame {
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
         new SelectOption().setVisible(true);
         this.setVisible(false);
+        Metodos.sumarAlHistorial(false);
     }//GEN-LAST:event_atrasActionPerformed
 
     private void ataque1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataque1ActionPerformed
@@ -170,6 +171,7 @@ public class Combat extends javax.swing.JFrame {
         if(Metodos.getAtaques(0).getUsos()==0){
             ataque1.setEnabled(false);
         }
+        end();
         marcadores();
         cargarBotones();
     }//GEN-LAST:event_ataque1ActionPerformed
@@ -181,6 +183,7 @@ public class Combat extends javax.swing.JFrame {
         if(Metodos.getAtaques(1).getUsos()==0){
             ataque2.setEnabled(false);
         }
+        end();
         marcadores();
         cargarBotones();
     }//GEN-LAST:event_ataque2ActionPerformed
@@ -192,6 +195,7 @@ public class Combat extends javax.swing.JFrame {
         if(Metodos.getAtaques(2).getUsos()==0){
             ataque3.setEnabled(false);
         }
+        end();
         marcadores();
         cargarBotones();
     }//GEN-LAST:event_ataque3ActionPerformed
@@ -203,10 +207,21 @@ public class Combat extends javax.swing.JFrame {
         if(Metodos.getAtaques(3).getUsos()==0){
             ataque4.setEnabled(false);
         }
+        end();
         marcadores();
         cargarBotones();
     }//GEN-LAST:event_ataque4ActionPerformed
 
+    private void end(){
+        if(fight.isVictory()){
+            this.setVisible(false);
+            new EndBattle(true).setVisible(true);
+        }
+        if(fight.isDefeat()){
+            this.setVisible(false);
+            new EndBattle(false).setVisible(true);
+        }
+    }
     /**
      * @param args the command line arguments
      */
