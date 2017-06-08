@@ -19,8 +19,9 @@ public class NewGame extends javax.swing.JFrame {
     public NewGame() {
         initComponents();
         this.setLocationRelativeTo(null);
-//        MetodosUsuario.mostrarDatosJugador();
-        MetodosUsuario.borrarJugador();
+        codPartidaLabel.setText(String.valueOf(MainMenu.getPartida()));
+        MetodosUsuario.mostrarDatosJugador();
+//        MetodosUsuario.borrarJugador();
     }
 
     /**
@@ -98,7 +99,6 @@ public class NewGame extends javax.swing.JFrame {
     private void nuevaPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevaPartidaActionPerformed
         new NewPlayer().setVisible(true);
         this.setVisible(false);
-        MetodosUsuario.borrarJugador();
     }//GEN-LAST:event_nuevaPartidaActionPerformed
 
     /**
