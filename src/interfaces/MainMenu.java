@@ -28,6 +28,17 @@ public class MainMenu extends javax.swing.JFrame {
         partida1.setText("Jugador 1: " + MetodosUsuario.nombre(1));
         partida2.setText("Jugador 2: " + MetodosUsuario.nombre(2));
         partida3.setText("Jugador 3: " + MetodosUsuario.nombre(3));
+        for(int i = 1; i<=3; i++){
+            if(MetodosUsuario.nombre(i)==null)
+                switch(i){
+                    case 1: partida1.setText("Sin jugador");
+                            break;
+                    case 2: partida2.setText("Sin Jugador");
+                            break;
+                    case 3: partida3.setText("Sin Jugador");
+                            break;
+                }
+        }
     }
 
     /**
