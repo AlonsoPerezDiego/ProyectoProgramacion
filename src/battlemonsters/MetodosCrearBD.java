@@ -37,7 +37,7 @@ public class MetodosCrearBD {
         crearBMonsterpedia();
         crearBMonstruos();
         crearBMovimientos();
-        crearJugador();
+        //crearJugador();
         insertarBMonsterpedia();
         insertarBMonstruos();
         insertarBMovimientos();
