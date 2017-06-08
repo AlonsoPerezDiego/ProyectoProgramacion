@@ -6,6 +6,7 @@
 package battlemonsters;
 
 import static battlemonsters.MetodosCrearBD.*;
+import interfaces.MainMenu;
 import interfaces.Monsterpedia;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,6 +25,7 @@ public class Metodos {
     static String elecMon;
     static Ataques[]myAtaques;
     static Ataques[]rAtaques;
+    static int numVictorias,numDerrotas;
     public static void cargarMonsterpedia(){
         DefaultTableModel modelo=(DefaultTableModel) Monsterpedia.tablaMonstruos.getModel();
         try {
@@ -103,5 +105,24 @@ public class Metodos {
     
     public static Ataques getRAtaques(int pos){
         return rAtaques[pos];
+    }
+    public static void sumarAlHistorial(boolean resultadoCombate){
+        try {
+            stmt=conn.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from jugador where numxogador="+ MainMenu.getPartida() +";");
+            numVictorias=rs.getInt("pwin");
+            numDerrotas=rs.getInt("plose");
+            if(resultadoCombate==true){
+                numVictorias++;
+                stmt.executeUpdate("update from jugador set pwin="+numVictorias+" where numxogador="+MainMenu.getPartida()+";");
+            }else{
+                numDerrotas++;
+                stmt.executeUpdate("update from jugador set plose="+numDerrotas+" where numxogador="+MainMenu.getPartida()+";");
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            System.err.println("Fallo al actualizar las victorias/derrotas");
+        }
+        
     }
 }
