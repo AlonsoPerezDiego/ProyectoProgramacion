@@ -67,12 +67,13 @@ public class EndBattle extends javax.swing.JFrame {
         getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
 
         end.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        end.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         end.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 endMouseClicked(evt);
             }
         });
-        getContentPane().add(end, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 640, 210));
+        getContentPane().add(end, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 640, 210));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EndBackground.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
