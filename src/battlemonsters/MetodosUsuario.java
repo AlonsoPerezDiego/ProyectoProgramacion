@@ -26,10 +26,10 @@ public class MetodosUsuario {
             NewGame.nombreLabel.setText(rs.getString("njugador"));
             NewGame.victoriasLabel.setText("Nº de victorias: "+rs.getInt("pwin"));
             NewGame.derrotasLabel.setText("Nº de derrotas: "+rs.getInt("plose"));
-            if(rs.getString("sjugador")=="hombre"){
-                NewGame.fotoLabel.setIcon(new ImageIcon("src/images/Boy.jpg"));
-            }else if(rs.getString("sjugador")=="mujer"){
-                NewGame.fotoLabel.setIcon(new ImageIcon("src/images/Girl.jpg"));
+            if("hombre".equals(rs.getString("sjugador"))){
+                NewGame.fotoLabel.setIcon(new ImageIcon("Personajes/Boy2.jpg"));
+            }else if("mujer".equals(rs.getString("sjugador"))){
+                NewGame.fotoLabel.setIcon(new ImageIcon("Personajes/Girl2.jpg"));
             }
             rs.close();
         } catch (SQLException ex) {
