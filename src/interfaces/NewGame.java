@@ -49,6 +49,7 @@ public class NewGame extends javax.swing.JFrame {
 
         continuar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         continuar.setText("Continuar");
+        continuar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         continuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 continuarActionPerformed(evt);
@@ -58,6 +59,7 @@ public class NewGame extends javax.swing.JFrame {
 
         nuevaPartida.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nuevaPartida.setText("Nueva partida");
+        nuevaPartida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nuevaPartida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nuevaPartidaActionPerformed(evt);
