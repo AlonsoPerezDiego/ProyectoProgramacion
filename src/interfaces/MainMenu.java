@@ -52,7 +52,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
         getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
 
-        partida1.setText("jButton4");
         partida1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
         partida1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         partida1.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +61,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
         getContentPane().add(partida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 480, 80));
 
-        partida2.setText("jButton2");
         partida2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
         partida2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         partida2.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +70,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
         getContentPane().add(partida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 480, 80));
 
-        partida3.setText("jButton3");
         partida3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
         partida3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         partida3.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +93,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void partida1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida1ActionPerformed
         new NewGame().setVisible(true);
         this.setVisible(false);
-        partida = 1;
+        
     }//GEN-LAST:event_partida1ActionPerformed
 
     private void partida2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida2ActionPerformed

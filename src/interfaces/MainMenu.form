@@ -50,7 +50,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="partida1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton4"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder>
@@ -75,7 +74,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="partida2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton2"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder>
@@ -100,7 +98,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="partida3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton3"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder>
