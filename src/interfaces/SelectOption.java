@@ -33,7 +33,6 @@ public class SelectOption extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
         partida1 = new javax.swing.JButton();
         partida2 = new javax.swing.JButton();
-        partida3 = new javax.swing.JButton();
         atras = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
@@ -72,13 +71,7 @@ public class SelectOption extends javax.swing.JFrame {
                 partida2MouseClicked(evt);
             }
         });
-        getContentPane().add(partida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 580, 70));
-
-        partida3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        partida3.setText("Historial del jugador");
-        partida3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
-        partida3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(partida3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 580, 70));
+        getContentPane().add(partida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 580, 70));
 
         atras.setBackground(new java.awt.Color(0, 0, 0));
         atras.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,7 +150,6 @@ public class SelectOption extends javax.swing.JFrame {
     private javax.swing.JLabel fondo;
     private javax.swing.JButton partida1;
     private javax.swing.JButton partida2;
-    private javax.swing.JButton partida3;
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }
