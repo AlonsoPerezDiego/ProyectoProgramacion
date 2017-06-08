@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import battlemonsters.MetodosUsuario;
+
 /**
  *
  * @author Diego
@@ -17,6 +19,8 @@ public class NewGame extends javax.swing.JFrame {
     public NewGame() {
         initComponents();
         this.setLocationRelativeTo(null);
+//        MetodosUsuario.mostrarDatosJugador();
+        MetodosUsuario.borrarJugador();
     }
 
     /**
@@ -30,10 +34,10 @@ public class NewGame extends javax.swing.JFrame {
 
         continuar = new javax.swing.JButton();
         nuevaPartida = new javax.swing.JButton();
-        foto = new javax.swing.JLabel();
-        nombre = new javax.swing.JLabel();
-        victorias = new javax.swing.JLabel();
-        derrotas = new javax.swing.JLabel();
+        fotoLabel = new javax.swing.JLabel();
+        nombreLabel = new javax.swing.JLabel();
+        victoriasLabel = new javax.swing.JLabel();
+        derrotasLabel = new javax.swing.JLabel();
         textoNG = new javax.swing.JLabel();
         codPartidaLabel = new javax.swing.JLabel();
 
@@ -49,7 +53,7 @@ public class NewGame extends javax.swing.JFrame {
                 continuarActionPerformed(evt);
             }
         });
-        getContentPane().add(continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 240, 70));
+        getContentPane().add(continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 240, 70));
 
         nuevaPartida.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nuevaPartida.setText("Nueva partida");
@@ -60,26 +64,27 @@ public class NewGame extends javax.swing.JFrame {
         });
         getContentPane().add(nuevaPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 240, 70));
 
-        foto.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 390));
+        fotoLabel.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(fotoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 390));
 
-        nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nombre.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 240, 40));
+        nombreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nombreLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        getContentPane().add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 240, 40));
 
-        victorias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        victorias.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(victorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 240, 40));
+        victoriasLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        victoriasLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        getContentPane().add(victoriasLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 240, 40));
 
-        derrotas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        derrotas.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(derrotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 240, 40));
+        derrotasLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        derrotasLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        getContentPane().add(derrotasLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 240, 40));
 
         textoNG.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textoNG.setText("(Se borrarán los datos actuales)");
         getContentPane().add(textoNG, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 240, 40));
 
-        codPartidaLabel.setBorder(new javax.swing.border.MatteBorder(null));
+        codPartidaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        codPartidaLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         getContentPane().add(codPartidaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 40, 30));
 
         pack();
@@ -93,6 +98,7 @@ public class NewGame extends javax.swing.JFrame {
     private void nuevaPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevaPartidaActionPerformed
         new NewPlayer().setVisible(true);
         this.setVisible(false);
+        MetodosUsuario.borrarJugador();
     }//GEN-LAST:event_nuevaPartidaActionPerformed
 
     /**
@@ -133,11 +139,11 @@ public class NewGame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel codPartidaLabel;
     private javax.swing.JButton continuar;
-    public static javax.swing.JLabel derrotas;
-    public static javax.swing.JLabel foto;
-    public static javax.swing.JLabel nombre;
+    public static javax.swing.JLabel derrotasLabel;
+    public static javax.swing.JLabel fotoLabel;
+    public static javax.swing.JLabel nombreLabel;
     private javax.swing.JButton nuevaPartida;
     private javax.swing.JLabel textoNG;
-    public static javax.swing.JLabel victorias;
+    public static javax.swing.JLabel victoriasLabel;
     // End of variables declaration//GEN-END:variables
 }
