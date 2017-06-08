@@ -93,19 +93,19 @@ public class MainMenu extends javax.swing.JFrame {
     private void partida1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida1ActionPerformed
         new NewGame().setVisible(true);
         this.setVisible(false);
-        
+        NewGame.codPartidaLabel.setText("1");
     }//GEN-LAST:event_partida1ActionPerformed
 
     private void partida2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida2ActionPerformed
         new NewGame().setVisible(true);
         this.setVisible(false);
-        partida = 2;
+        NewGame.codPartidaLabel.setText("2");
     }//GEN-LAST:event_partida2ActionPerformed
 
     private void partida3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida3ActionPerformed
         new NewGame().setVisible(true);
         this.setVisible(false);
-        partida = 3;
+        NewGame.codPartidaLabel.setText("3");
     }//GEN-LAST:event_partida3ActionPerformed
 
     public static int getPartida(){
