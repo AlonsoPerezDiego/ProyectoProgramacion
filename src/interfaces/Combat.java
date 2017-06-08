@@ -164,6 +164,7 @@ public class Combat extends javax.swing.JFrame {
     }//GEN-LAST:event_atrasActionPerformed
 
     private void ataque1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataque1ActionPerformed
+        fight.eficiencia(Metodos.getAtaques(0).getTipo(), Metodos.getRAtaques(0).getTipo());
         fight.fight(Metodos.getAtaques(0).getDaño(), Metodos.getRAtaques(unoDeCuatro()).getDaño());
         Metodos.getAtaques(0).setUsos(Metodos.getAtaques(0).getUsos()-1);
         if(Metodos.getAtaques(0).getUsos()==0){
@@ -174,6 +175,7 @@ public class Combat extends javax.swing.JFrame {
     }//GEN-LAST:event_ataque1ActionPerformed
 
     private void ataque2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataque2ActionPerformed
+        fight.eficiencia(Metodos.getAtaques(1).getTipo(), Metodos.getRAtaques(1).getTipo());
         fight.fight(Metodos.getAtaques(1).getDaño(), Metodos.getRAtaques(unoDeCuatro()).getDaño());
         Metodos.getAtaques(1).setUsos(Metodos.getAtaques(1).getUsos()-1);
         if(Metodos.getAtaques(1).getUsos()==0){
@@ -184,6 +186,7 @@ public class Combat extends javax.swing.JFrame {
     }//GEN-LAST:event_ataque2ActionPerformed
 
     private void ataque3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataque3ActionPerformed
+        fight.eficiencia(Metodos.getAtaques(2).getTipo(), Metodos.getRAtaques(2).getTipo());
         fight.fight(Metodos.getAtaques(2).getDaño(), Metodos.getRAtaques(unoDeCuatro()).getDaño());
         Metodos.getAtaques(2).setUsos(Metodos.getAtaques(2).getUsos()-1);
         if(Metodos.getAtaques(2).getUsos()==0){
@@ -194,6 +197,7 @@ public class Combat extends javax.swing.JFrame {
     }//GEN-LAST:event_ataque3ActionPerformed
 
     private void ataque4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataque4ActionPerformed
+        fight.eficiencia(Metodos.getAtaques(3).getTipo(), Metodos.getRAtaques(3).getTipo());
         fight.fight(Metodos.getAtaques(3).getDaño(), Metodos.getRAtaques(unoDeCuatro()).getDaño());
         Metodos.getAtaques(3).setUsos(Metodos.getAtaques(3).getUsos()-1);
         if(Metodos.getAtaques(3).getUsos()==0){
