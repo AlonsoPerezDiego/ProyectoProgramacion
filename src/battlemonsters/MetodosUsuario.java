@@ -45,6 +45,7 @@ public class MetodosUsuario {
             stmt=conn.createStatement();
             stmt.executeUpdate("delete from jugador where numxogador="+NewGame.codPartidaLabel.getText()+";");
                  stmt.executeUpdate("insert into jugador(numxogador,njugador,sjugador,pwin,plose)values("+MainMenu.getPartida()+",'" + NewPlayer.getNombre() + "','" + NewPlayer.getSexo() + "',0,0);");
+                 conn.commit();
                  System.out.println("Borrado correctamente.");
         } catch (SQLException ex) {
             try {
