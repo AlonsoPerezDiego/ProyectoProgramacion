@@ -22,6 +22,10 @@ public class NewGame extends javax.swing.JFrame {
         codPartidaLabel.setText(String.valueOf(MainMenu.getPartida()));
         MetodosUsuario.mostrarDatosJugador();
 //        MetodosUsuario.borrarJugador();
+        if(MetodosUsuario.cargarNombre(MainMenu.getPartida()).isEmpty()){
+            continuar.setEnabled(false);
+            continuar.hide();
+        }
     }
 
     /**
