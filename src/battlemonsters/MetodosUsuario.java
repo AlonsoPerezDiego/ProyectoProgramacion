@@ -34,7 +34,7 @@ public class MetodosUsuario {
             rs.close();
         } catch (SQLException ex) {
             try {
-                stmt.executeUpdate("insert into jugador(numxogador,njugador,sjugador,pwin,plose)values("+MainMenu.getPartida()+",'Partida vacia','desconocido',0,0);");
+                stmt.executeUpdate("insert into jugador(numxogador,njugador,sjugador,pwin,plose)values("+MainMenu.getPartida()+", null, null,0,0);");
             } catch (SQLException ex1) {
                System.err.println("Fallo al cargar jugador" +ex);
             }
@@ -49,7 +49,7 @@ public class MetodosUsuario {
                  System.out.println("Borrado correctamente.");
         } catch (SQLException ex) {
             try {
-                stmt.executeUpdate("insert into jugador(numxogador,njugador,sjugador,pwin,plose)values("+NewGame.codPartidaLabel.getText()+",'Partida vacia','desconocido',0,0);");
+                stmt.executeUpdate("insert into jugador(numxogador,njugador,sjugador,pwin,plose)values("+NewGame.codPartidaLabel.getText()+", null, null,0,0);");
             } catch (SQLException ex1) {
                 System.err.println("Error al insertar jugador vacio"+ex1);;
             }
